@@ -1,0 +1,58 @@
+{
+  "name": "@bkpsdm/ui-kit",
+  "version": "1.0.0",
+  "description": "BKPSDM UI Kit — design system admin untuk Nuxt/Vue/React, selaras INA Digital Design System. Framework-agnostic: CSS custom properties + vanilla JS, tanpa dependensi build.",
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "ui-kit",
+    "design-system",
+    "ina-digital",
+    "idss",
+    "vue",
+    "nuxt",
+    "react",
+    "admin",
+    "dashboard",
+    "components",
+    "bkpsdm",
+    "css",
+    "tokens"
+  ],
+  "exports": {
+    ".": "./dist/ui-kit.esm.js",
+    "./css": "./dist/ui-kit.css",
+    "./icons": "./dist/icons.json",
+    "./script": "./dist/ui-kit.js",
+    "./dashboard": "./dist/dashboard.js"
+  },
+  "main": "./dist/ui-kit.esm.js",
+  "module": "./dist/ui-kit.esm.js",
+  "style": "./dist/ui-kit.css",
+  "files": [
+    "dist/"
+  ],
+  "sideEffects": [
+    "*.css",
+    "./dist/ui-kit.js"
+  ],
+  "peerDependencies": {
+    "vue": ">=3.0.0"
+  },
+  "peerDependenciesMeta": {
+    "vue": {
+      "optional": true
+    }
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bkpsdmkrw/bkpsdm-ui-kit.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

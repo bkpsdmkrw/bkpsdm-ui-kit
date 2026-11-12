@@ -244,7 +244,21 @@
         </div>
 
         <div class="bk-tab-panel is-active is-fade" id="nuxt-1" data-tab-panel>
-          <p class="bk-fs-sm bk-text-2 bk-mb-4">Salin CSS &amp; JS ke proyek Nuxt, daftarkan di <span class="bk-code">nuxt.config.ts</span>, lalu bungkus komponen sebagai file <span class="bk-code">.vue</span>.</p>
+          <h4 class="bk-mt-4 bk-mb-2">Cara tercepat — via npm</h4>
+<p class="bk-fs-sm bk-text-2 bk-mb-4">Paket sudah tersedia di npm sebagai <span class="bk-code">@bkpsdm/ui-kit</span>. Ini menggantikan langkah salin-manual CSS/JS.</p>
+        <div class="bk-code-block">
+          <div class="bk-code-head">
+            <span class="bk-code-lang"><i data-icon="file-text"></i>TypeScript</span>
+            <div class="bk-flex bk-gap-1">
+              <button class="bk-btn bk-btn-ghost bk-btn-sm" data-code-toggle aria-expanded="false"><i data-icon="chevron-down"></i><span>Lihat Kode</span></button>
+              <button class="bk-btn bk-btn-ghost bk-btn-sm" data-copy-target="#code-npm-nuxt"><i data-icon="copy"></i>Salin</button>
+            </div>
+          </div>
+          <pre class="bk-pre bk-code-body" id="code-npm-nuxt" data-code="npm-nuxt" hidden></pre>
+        </div>
+<h4 class="bk-mt-6 bk-mb-2">Cara manual (tanpa npm)</h4>
+<p class="bk-fs-sm bk-text-2 bk-mb-4">Alternatif bila tidak memakai npm: salin folder <span class="bk-code">assets/</span> lalu daftarkan di <span class="bk-code">nuxt.config.ts</span>.</p>
+<p class="bk-fs-sm bk-text-2 bk-mb-4">Salin CSS &amp; JS ke proyek Nuxt, daftarkan di <span class="bk-code">nuxt.config.ts</span>, lalu bungkus komponen sebagai file <span class="bk-code">.vue</span>.</p>
                   <div class="bk-code-block">
           <div class="bk-code-head">
             <span class="bk-code-lang"><i data-icon="file-text"></i>TypeScript</span>
@@ -381,6 +395,19 @@ export default defineNuxtConfig({
           <pre class="bk-pre bk-code-body" id="code-packagist-publish" data-code="packagist-publish" hidden></pre>
         </div>
       </section>
+
+        <h4 class="bk-mt-6 bk-mb-2">Rilis ke npm (frontend)</h4>
+<p class="bk-fs-sm bk-text-2 bk-mb-4">Paket yang sama juga dipublikasikan ke npm untuk Nuxt/Vue/React. Versi dikelola oleh <span class="bk-code">npm version</span> yang otomatis membuat git tag — sinkron dengan Packagist.</p>
+        <div class="bk-code-block">
+          <div class="bk-code-head">
+            <span class="bk-code-lang"><i data-icon="file-text"></i>Bash</span>
+            <div class="bk-flex bk-gap-1">
+              <button class="bk-btn bk-btn-ghost bk-btn-sm" data-code-toggle aria-expanded="false"><i data-icon="chevron-down"></i><span>Lihat Kode</span></button>
+              <button class="bk-btn bk-btn-ghost bk-btn-sm" data-copy-target="#code-npm-publish"><i data-icon="copy"></i>Salin</button>
+            </div>
+          </div>
+          <pre class="bk-pre bk-code-body" id="code-npm-publish" data-code="npm-publish" hidden></pre>
+        </div>
 
       <!-- FAQ -->
       <section class="bk-demo-section">

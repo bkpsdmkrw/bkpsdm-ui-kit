@@ -1153,6 +1153,58 @@ php artisan vendor:publish --tag=bkpsdm-views
 # Update versi berikutnya cukup: tag baru (v1.1.0) → Packagist
 # otomatis ter-update lewat webhook → composer update di aplikasi`,
 
+    'npm-nuxt':
+`# 1) Pasang paket dari npm
+npm install @bkpsdm/ui-kit
+
+# 2) Impor CSS & muat skrip (nuxt.config.ts)
+export default defineNuxtConfig({
+  css: ['@bkpsdm/ui-kit/css'],
+  app: {
+    head: {
+      link: [
+        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap' }
+      ],
+      script: [
+        { src: 'https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js', defer: true }
+      ]
+    }
+  }
+})
+
+# 3) Render ikon di sisi server (SSR-safe, tanpa DOM)
+#    components/Bk/BkIcon.vue
+import { icon } from '@bkpsdm/ui-kit'
+
+<template>
+  <span v-html="icon(name)" class="bk-icon" aria-hidden="true" />
+</template>
+<script setup lang="ts">
+defineProps<{ name: string }>()
+</script>
+
+# Interaktivitas penuh (toast/tema/dropdown):
+import '@bkpsdm/ui-kit/script'   // menyediakan window.Bk`,
+
+    'npm-publish':
+`# 1) Build (pastikan dist/ terbaru — otomatis via prepublishOnly)
+npm run build
+
+# 2) Login (sekali)
+npm login
+
+# 3) Naikkan versi + publish (npm version otomatis membuat git tag)
+npm version patch    # 1.0.0 -> 1.0.1 (bugfix)
+npm version minor    # 1.1.0         (fitur baru)
+npm version major    # 2.0.0         (breaking)
+npm publish          # scope publik sudah diatur di package.json
+
+# 4) Push tag agar sinkron dengan Packagist
+git push origin --tags
+
+# Update berikutnya: npm version X -> npm publish -> git push --tags`,
+
   };
 
   document.addEventListener('DOMContentLoaded', function () {

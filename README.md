@@ -18,7 +18,11 @@ ui-kit/
 ├── login.html            # Contoh: Halaman autentikasi (split-screen)
 ├── 404.html              # Contoh: Halaman error
 ├── composer.json         # Paket Composer (siap publikasi ke Packagist)
+├── package.json          # Paket npm (siap publikasi untuk Nuxt/Vue/React)
 ├── LICENSE               # Lisensi MIT
+├── .gitignore
+├── scripts/build.mjs     # Build dist/ untuk npm
+├── dist/                 # Hasil build npm (CSS, JS, ESM, icons.json)
 ├── src/                  # Service provider Laravel
 ├── resources/views/components/  # Komponen Blade starter (<x-bk::...>)
 ├── assets/
@@ -119,6 +123,56 @@ php artisan vendor:publish --tag=bkpsdm-views
 ```
 
 > Ganti `"name": "bkpsdm/ui-kit"` di `composer.json` dengan namespace vendor Anda sebelum submit.
+
+## Publikasi ke npm (Nuxt / Vue / React)
+
+Paket yang sama juga tersedia untuk frontend lewat **npm** — satu repo, dua registry, satu sumber kebenaran (tag SemVer yang sama).
+
+```bash
+# 1) Build dist/ (otomatis juga via prepublishOnly)
+npm run build
+
+# 2) Login (sekali)
+npm login
+
+# 3) Naikkan versi + publish (npm version otomatis membuat git tag)
+npm version patch    # 1.0.0 -> 1.0.1 (bugfix)
+npm version minor    # 1.1.0 (fitur)
+npm version major    # 2.0.0 (breaking)
+npm publish          # scope publik sudah diatur di package.json
+
+# 4) Sinkronkan tag dengan Packagist
+git push origin --tags
+```
+
+**Pemakaian di Nuxt:**
+
+```bash
+npm install @bkpsdm/ui-kit
+```
+
+```ts
+// nuxt.config.ts
+export default defineNuxtConfig({
+  css: ['@bkpsdm/ui-kit/css']
+})
+```
+
+```ts
+// Render ikon SSR-safe
+import { icon, icons } from '@bkpsdm/ui-kit'   // 67 ikon + render SVG
+import '@bkpsdm/ui-kit/script'                 // window.Bk (toast/tema/dropdown)
+```
+
+Struktur ekspor paket:
+
+| Ekspor | Isi |
+|---|---|
+| `@bkpsdm/ui-kit` (default) | ESM: `icons`, `icon()`, `replaceIcons()` |
+| `@bkpsdm/ui-kit/css` | `ui-kit.css` |
+| `@bkpsdm/ui-kit/script` | `ui-kit.js` (IIFE, `window.Bk`) |
+| `@bkpsdm/ui-kit/icons` | `icons.json` |
+| `@bkpsdm/ui-kit/dashboard` | `dashboard.js` (Chart.js) |
 
 ---
 

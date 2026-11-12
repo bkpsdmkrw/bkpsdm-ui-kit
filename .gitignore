@@ -1,0 +1,13 @@
+# Dependensi
+node_modules/
+npm-debug.log*
+
+# Hasil build & artefak
+*.tgz
+*.tar.gz
+.npm/
+
+# IDE / OS
+.DS_Store
+.idea/
+.vscode/
