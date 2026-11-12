@@ -1,6 +1,6 @@
 {
   "name": "@bkpsdm/ui-kit",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "BKPSDM UI Kit — design system admin untuk Nuxt/Vue/React, selaras INA Digital Design System. Framework-agnostic: CSS custom properties + vanilla JS, tanpa dependensi build.",
   "type": "module",
   "license": "MIT",
