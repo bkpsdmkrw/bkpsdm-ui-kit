@@ -447,17 +447,17 @@
     var head = e.target.closest('.bk-accordion-header');
     if (!head) return;
     var item = head.closest('.bk-accordion-item');
-    var content = item.querySelector('.bk-accordion-content');
+    var accordion = item.closest('.bk-accordion');
     var isOpen = item.classList.contains('is-open');
-    var mode = item.closest('.bk-accordion') ? item.closest('.bk-accordion').getAttribute('data-mode') : null;
+    var mode = accordion ? accordion.getAttribute('data-mode') : null;
     if (mode === 'single' && !isOpen) {
-      item.closest('.bk-accordion').querySelectorAll('.bk-accordion-item.is-open').forEach(function (it) {
+      accordion.querySelectorAll('.bk-accordion-item.is-open').forEach(function (it) {
         it.classList.remove('is-open');
-        it.querySelector('.bk-accordion-content').style.maxHeight = null;
+        var tg = it.querySelector('.bk-accordion-header');
+        if (tg) tg.setAttribute('aria-expanded', 'false');
       });
     }
     item.classList.toggle('is-open', !isOpen);
-    content.style.maxHeight = isOpen ? null : content.scrollHeight + 'px';
     head.setAttribute('aria-expanded', String(!isOpen));
   });
 

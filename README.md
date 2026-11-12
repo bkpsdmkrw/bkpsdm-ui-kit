@@ -97,6 +97,19 @@ git tag v1.0.0 && git push origin main --tags
 # daftarkan URL repo di https://packagist.org/packages/submit
 ```
 
+**Pasang webhook GitHub → Packagist (wajib untuk auto-update):**
+
+1. Di **Packagist**: halaman paket → **Settings** → salin URL di bagian *GitHub Service Hook*:
+   `https://packagist.org/api/github?username=USERNAME_ANDA`
+2. Di **GitHub**: repo → **Settings → Webhooks → Add webhook**:
+   - *Payload URL*: tempel URL Packagist (opsional tambah `?token=API_TOKEN_PACKAGIST`)
+   - *Content type*: `application/json`
+   - *Events*: **Just the push event** (cukup untuk push & tag baru)
+   - Centang **Active** → **Add webhook**
+3. Uji dengan `git push --tags` (atau tombol *Redeliver* di GitHub).
+
+Tanpa webhook ini, Packagist menampilkan peringatan *"This package is not auto-updated."*
+
 Lalu di aplikasi Laravel:
 
 ```bash

@@ -1078,7 +1078,7 @@ const icon = computed(() => window.Bk?.icons[props.name] ?? '')
 
 <!-- components/Bk/BkBadge.vue -->
 <template>
-  <span :class="['bk-badge', soft ? \`bk-badge-soft-${type}\` : \`bk-badge-${type}\`]">
+  <span :class="['bk-badge', soft ? \`bk-badge-soft-\${type}\` : \`bk-badge-\${type}\`]">
     <span v-if="dot" class="bk-badge-dot" />
     <slot />
   </span>
@@ -1132,15 +1132,26 @@ git push origin main --tags
 # 3) Daftarkan di https://packagist.org/packages/submit
 #    Masukkan URL repo GitHub → Packagist otomatis membaca composer.json.
 
-# 4) Opsional: webhook GitHub → Packagist agar setiap release baru
-#    otomatis terpublikasi tanpa submit ulang.
+# 4) WAJIB: Pasang webhook GitHub → Packagist (auto-update)
+#    Tanpa ini muncul peringatan "This package is not auto-updated."
+#    a. Di Packagist: buka halaman paket → "Settings"
+#       → salin URL di bagian "GitHub Service Hook":
+#       https://packagist.org/api/github?username=USERNAME_GITHUB_ANDA
+#    b. Di GitHub: repo → Settings → Webhooks → "Add webhook"
+#       - Payload URL : tempel URL Packagist di atas
+#                       (tambahkan ?token=API_TOKEN_PACKAGIST bila ingin aman)
+#       - Content type: application/json
+#       - Events      : "Just the push event" (cukup untuk push & tag baru)
+#       - Aktifkan     : centang "Active" → "Add webhook"
+#    c. Uji: git push --tags, atau tombol "Redeliver" di GitHub.
 
 # 5) Di aplikasi Laravel
 composer require bkpsdm/ui-kit
 php artisan vendor:publish --tag=bkpsdm-assets
 php artisan vendor:publish --tag=bkpsdm-views
 
-# Update versi berikutnya cukup: tag baru (v1.1.0) → composer update`,
+# Update versi berikutnya cukup: tag baru (v1.1.0) → Packagist
+# otomatis ter-update lewat webhook → composer update di aplikasi`,
 
   };
 
