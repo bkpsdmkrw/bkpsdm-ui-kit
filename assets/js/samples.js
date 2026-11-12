@@ -901,7 +901,247 @@ document.getElementById('otp-demo').addEventListener('bk:otp-complete', function
 sb.addEventListener('bk:searchbar-select', function (e) {
   console.log(e.detail.value);
 });
-<\/script>`
+<\/script>`,
+
+    /* ---------- DOKUMENTASI & INSTALASI ---------- */
+    'dok-struktur':
+`ui-kit/
+├── assets/
+│   ├── css/ui-kit.css          # design system (token IDDS + semua komponen)
+│   └── js/
+│       ├── ui-kit.js           # interaksi inti (ikon, tema, modal, toast…)
+│       └── dashboard.js        # grafik Chart.js 4 (opsional, tema-adaptif)
+├── resources/views/components/ # komponen Blade starter (paket Composer)
+├── src/BkpsdmUiKitServiceProvider.php
+├── composer.json               # untuk publish ke Packagist
+├── index.html                  # demo dashboard analitik
+├── components.html             # pustaka 46 komponen + contoh kode
+├── dokumentasi.html            # halaman ini
+└── README.md`,
+
+    'laravel-manual':
+`# 1) Salin aset ke folder public/
+cp -r assets public/
+
+{{-- 2) resources/views/layouts/admin.blade.php --}}
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>@yield('title', 'BKPSDM')</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ asset('assets/css/ui-kit.css') }}">
+</head>
+<body>
+  <div class="bk-app">
+    @include('layouts.partials.sidebar')
+    <div class="bk-main">
+      @include('layouts.partials.topbar')
+      <main class="bk-content">@yield('content')</main>
+    </div>
+  </div>
+  <script src="{{ asset('assets/js/ui-kit.js') }}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
+  <script src="{{ asset('assets/js/dashboard.js') }}" defer></script>
+  @stack('scripts')
+</body>
+</html>
+
+{{-- 3) Pemakaian di halaman (kelas langsung) --}}
+@extends('layouts.admin')
+@section('content')
+  <div class="bk-card">
+    <div class="bk-card-header">
+      <div><div class="bk-card-title">Data Pegawai</div><div class="bk-card-sub">2.847 pegawai</div></div>
+      <button class="bk-btn bk-btn-primary"><i data-icon="plus"></i>Tambah</button>
+    </div>
+    <div class="bk-card-body">…</div>
+  </div>
+@endsection`,
+
+    'laravel-komponen':
+`{{-- Komponen Blade dari paket Composer (<x-bk::...>) --}}
+<x-bk::button type="primary" icon="plus" size="lg">Simpan</x-bk::button>
+<x-bk::button type="soft-danger" size="sm" icon="trash">Hapus</x-bk::button>
+
+<x-bk::badge type="success" :dot="true">Aktif</x-bk::badge>
+<x-bk::badge type="warning" soft>Menunggu</x-bk::badge>
+
+<x-bk::alert type="success" title="Berhasil" dismissible>
+  Data tersinkronisasi dengan SIASN.
+</x-bk::alert>
+
+<x-bk::card title="Profil Pegawai" subtitle="Data pribadi">
+  <x-slot name="actions">
+    <x-bk::button type="outline" size="sm">Ubah</x-bk::button>
+  </x-slot>
+  Isi kartu…
+</x-bk::card>
+
+<x-bk::icon name="graduation" class="bk-stat-icon" />
+
+{{-- Varian: primary|success|info|warning|danger|soft-*|outline|ghost
+     Ukuran: xs|sm|lg|xl (default 44px) — identik dengan kit HTML --}}`,
+
+    'laravel-toast':
+`{{-- 1) Flash message dari controller --}}
+@if (session('success'))
+<script>Bk.toast({ type: 'success', title: 'Berhasil', message: '{{ session('success') }}' });</script>
+@endif
+@if (session('error'))
+<script>Bk.toast({ type: 'danger', title: 'Gagal', message: '{{ session('error') }}' });</script>
+@endif
+
+{{-- 2) Konten AJAX: render ulang ikon setelah fetch --}}
+<script>
+fetch('/api/pegawai/daftar')
+  .then(r => r.text())
+  .then(html => {
+    const el = document.getElementById('daftar');
+    el.innerHTML = html;
+    Bk.replaceIcons(el);   // ikon baru ikut ter-render
+    Bk.animateCounters(el);
+  });
+</script>`,
+
+    'laravel-composer':
+`# 1) Pasang paket (setelah terpublikasi di Packagist)
+composer require bkpsdm/ui-kit
+
+# 2) Publikasikan aset & komponen Blade
+php artisan vendor:publish --tag=bkpsdm-assets
+php artisan vendor:publish --tag=bkpsdm-views
+
+# 3) Layout memakai aset vendor
+<link rel="stylesheet" href="{{ asset('vendor/bkpsdm/ui-kit.css') }}">
+<script src="{{ asset('vendor/bkpsdm/ui-kit.js') }}"></script>
+
+# Provider terdaftar otomatis via Laravel auto-discovery,
+# komponen langsung tersedia: <x-bk::button> <x-bk::badge> dll.`,
+
+    'nuxt-config':
+`// 1) Salin assets/ ke folder proyek Nuxt, lalu nuxt.config.ts
+export default defineNuxtConfig({
+  css: ['~/assets/css/ui-kit.css'],
+
+  app: {
+    head: {
+      link: [
+        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap' }
+      ],
+      script: [
+        { src: '/vendor/ui-kit.js', defer: true },
+        { src: 'https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js', defer: true },
+        { src: '/vendor/dashboard.js', defer: true }
+      ]
+    }
+  }
+})
+
+// 2) Letakkan ui-kit.js & dashboard.js di public/vendor/`,
+
+    'nuxt-plugin':
+`// plugins/ui-kit.client.ts
+export default defineNuxtPlugin(() => {
+  // Render ulang ikon setelah mount & setiap pindah halaman
+  const renderIcons = () => window.Bk?.replaceIcons(document)
+
+  onMounted(renderIcons)
+  watch(
+    () => useRoute().fullPath,
+    () => nextTick(renderIcons)
+  )
+
+  // $bk tersedia di seluruh komponen
+  return { provide: { bk: () => window.Bk } }
+})
+
+// Pemakaian di komponen:
+const { $bk } = useNuxtApp()
+$bk().toast({ type: 'success', title: 'Tersimpan', message: 'OK' })`,
+
+    'nuxt-komponen':
+`<!-- components/Bk/BkIcon.vue -->
+<template>
+  <span class="bk-icon" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+         stroke-linecap="round" stroke-linejoin="round" v-html="icon" />
+  </span>
+</template>
+<script setup lang="ts">
+const props = defineProps<{ name: string }>()
+const icon = computed(() => window.Bk?.icons[props.name] ?? '')
+</script>
+
+<!-- components/Bk/BkBadge.vue -->
+<template>
+  <span :class="['bk-badge', soft ? \`bk-badge-soft-${type}\` : \`bk-badge-${type}\`]">
+    <span v-if="dot" class="bk-badge-dot" />
+    <slot />
+  </span>
+</template>
+<script setup lang="ts">
+withDefaults(defineProps<{ type?: string; dot?: boolean; soft?: boolean }>(), {
+  type: 'primary', dot: false, soft: false
+})
+</script>
+
+<!-- Pemakaian -->
+<BkBadge type="success" dot>Aktif</BkBadge>
+<BkIcon name="graduation" />`,
+
+    'packagist-json':
+`// composer.json — syarat utama terpublikasi di Packagist
+{
+    "name": "bkpsdm/ui-kit",
+    "description": "BKPSDM UI Kit — design system admin untuk Laravel & Nuxt (INA Digital Design System).",
+    "type": "library",
+    "license": "MIT",
+    "keywords": ["laravel", "nuxt", "ui-kit", "design-system", "ina-digital"],
+    "require": {
+        "php": "^8.1",
+        "illuminate/support": "^10.0|^11.0|^12.0"
+    },
+    "autoload": {
+        "psr-4": { "Bkpsdm\\UiKit\\": "src/" }
+    },
+    "extra": {
+        "laravel": {
+            "providers": ["Bkpsdm\\UiKit\\BkpsdmUiKitServiceProvider"]
+        }
+    }
+}
+
+// Syarat Packagist:
+// 1. composer.json valid (cek: composer validate)
+// 2. Repo publik + punya tag versi semantik (v1.0.0)
+// 3. License jelas (MIT) — file LICENSE wajib ada`,
+
+    'packagist-publish':
+`# 1) Validasi & commit
+composer validate
+git add -A && git commit -m "release: v1.0.0"
+
+# 2) Buat tag versi (Packagist membaca tag)
+git tag v1.0.0
+git push origin main --tags
+
+# 3) Daftarkan di https://packagist.org/packages/submit
+#    Masukkan URL repo GitHub → Packagist otomatis membaca composer.json.
+
+# 4) Opsional: webhook GitHub → Packagist agar setiap release baru
+#    otomatis terpublikasi tanpa submit ulang.
+
+# 5) Di aplikasi Laravel
+composer require bkpsdm/ui-kit
+php artisan vendor:publish --tag=bkpsdm-assets
+php artisan vendor:publish --tag=bkpsdm-views
+
+# Update versi berikutnya cukup: tag baru (v1.1.0) → composer update`,
+
   };
 
   document.addEventListener('DOMContentLoaded', function () {

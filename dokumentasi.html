@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dokumentasi &amp; Instalasi — BKPSDM UI Kit</title>
+  <meta name="description" content="Panduan lengkap instalasi BKPSDM UI Kit untuk Laravel dan Nuxt, serta publikasi ke Packagist.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/ui-kit.css">
+</head>
+<body>
+<div class="bk-app">
+
+  <aside class="bk-sidebar" aria-label="Navigasi utama">
+    <div class="bk-sidebar-header">
+      <div class="bk-brand-mark" aria-hidden="true">BK</div>
+      <div>
+        <div class="bk-brand-name">BKPSDM</div>
+        <div class="bk-brand-sub">UI Kit &middot; Admin Theme</div>
+      </div>
+      <button class="bk-icon-btn bk-ms-auto" data-sidebar-close aria-label="Tutup menu"><i data-icon="x"></i></button>
+    </div>
+    <nav class="bk-sidebar-nav">
+      <div class="bk-nav-group">
+        <div class="bk-nav-group-title">Utama</div>
+        <a class="bk-nav-link" href="index.html"><i data-icon="home"></i>Dashboard</a>
+        <a class="bk-nav-link" href="index.html#analitik"><i data-icon="chart"></i>Analitik<span class="bk-nav-badge bk-soft">12</span></a>
+      </div>
+      <div class="bk-nav-group">
+        <div class="bk-nav-group-title">Contoh Halaman</div>
+        <a class="bk-nav-link" href="form.html"><i data-icon="edit"></i>Formulir</a>
+        <a class="bk-nav-link" href="table.html"><i data-icon="database"></i>Tabel Data</a>
+        <a class="bk-nav-link" href="profile.html"><i data-icon="user"></i>Profil Pengguna</a>
+        <a class="bk-nav-link" href="profil-asn.html"><i data-icon="id-card"></i>Profil ASN</a>
+        <a class="bk-nav-link" href="mutasi.html"><i data-icon="arrow-swap"></i>Mutasi &amp; Rotasi</a>
+        <a class="bk-nav-link" href="pensiun.html"><i data-icon="log-out"></i>Pensiun</a>
+        <a class="bk-nav-link" href="login.html"><i data-icon="lock"></i>Halaman Login</a>
+        <a class="bk-nav-link" href="404.html"><i data-icon="alert"></i>Halaman 404</a>
+      </div>
+      <div class="bk-nav-group">
+        <div class="bk-nav-group-title">Kepegawaian</div>
+        <a class="bk-nav-link" href="table.html"><i data-icon="users"></i>Data Pegawai<span class="bk-nav-badge">2.8k</span></a>
+        <a class="bk-nav-link" href="profil-asn.html"><i data-icon="id-card"></i>Profil ASN</a>
+        <a class="bk-nav-link" href="mutasi.html"><i data-icon="arrow-swap"></i>Mutasi &amp; Rotasi</a>
+        <a class="bk-nav-link" href="pensiun.html"><i data-icon="log-out"></i>Pensiun</a>
+      </div>
+      <div class="bk-nav-group">
+        <div class="bk-nav-group-title">Pengembangan</div>
+        <a class="bk-nav-link" href="#"><i data-icon="graduation"></i>Diklat<span class="bk-nav-badge bk-soft">24</span></a>
+        <a class="bk-nav-link" href="#"><i data-icon="award"></i>Sertifikasi</a>
+        <a class="bk-nav-link" href="#"><i data-icon="target"></i>Kompetensi</a>
+        <a class="bk-nav-link" href="#"><i data-icon="monitor"></i>E-Learning</a>
+      </div>
+      <div class="bk-nav-group">
+        <div class="bk-nav-group-title">Sistem</div>
+        <a class="bk-nav-link" href="components.html"><i data-icon="layers"></i>Komponen UI</a>
+        <a class="bk-nav-link is-active" href="dokumentasi.html"><i data-icon="book"></i>Dokumentasi</a>
+        <a class="bk-nav-link" href="#"><i data-icon="settings"></i>Pengaturan</a>
+        <a class="bk-nav-link" href="#"><i data-icon="help"></i>Bantuan</a>
+      </div>
+    </nav>
+    <div class="bk-sidebar-footer">
+      <div class="bk-avatar bk-avatar-blue">AR</div>
+      <div class="bk-flex-col bk-gap-1 bk-sidebar-foot-text" style="min-width:0">
+        <span class="bk-fw-700 bk-fs-sm bk-truncate">Admin BKPSDM</span>
+        <span class="bk-fs-xs bk-muted">Super Administrator</span>
+      </div>
+      <button class="bk-icon-btn bk-ms-auto" data-tooltip="Keluar" data-tooltip-pos="left" aria-label="Keluar"><i data-icon="log-out"></i></button>
+    </div>
+  </aside>
+  <div class="bk-sidebar-backdrop" aria-hidden="true"></div>
+
+  <div class="bk-main">
+    <header class="bk-topbar">
+      <button class="bk-icon-btn" data-sidebar-toggle aria-label="Buka menu"><i data-icon="menu"></i></button>
+      <div>
+        <div class="bk-topbar-title">Dokumentasi</div>
+        <nav class="bk-crumb" aria-label="Breadcrumb">
+          <a href="index.html">Beranda</a><i data-icon="chevron-right"></i><span>Dokumentasi &amp; Instalasi</span>
+        </nav>
+      </div>
+      <div class="bk-topbar-search bk-ms-auto">
+        <i data-icon="search"></i>
+        <input type="search" placeholder="Cari di dokumentasi…" aria-label="Pencarian global">
+        <kbd>/</kbd>
+      </div>
+      <div class="bk-dropdown">
+        <button class="bk-icon-btn" data-dropdown-toggle data-tooltip="Pilih tema" aria-label="Pilih tema" aria-haspopup="true"><span data-theme-icon></span></button>
+        <div class="bk-dropdown-menu" style="min-width:200px">
+          <div class="bk-dropdown-header"><div class="bk-dropdown-title">Tampilan</div><div class="bk-dropdown-sub">Pilih tema aplikasi</div></div>
+          <button class="bk-dropdown-item bk-theme-option" data-theme-set="light"><i data-icon="sun"></i>Terang<span class="bk-theme-check"><i data-icon="check"></i></span></button>
+          <button class="bk-dropdown-item bk-theme-option" data-theme-set="dark"><i data-icon="moon"></i>Gelap<span class="bk-theme-check"><i data-icon="check"></i></span></button>
+          <button class="bk-dropdown-item bk-theme-option" data-theme-set="system"><i data-icon="monitor"></i>Ikuti Sistem<span class="bk-theme-check"><i data-icon="check"></i></span></button>
+        </div>
+      </div>
+      <div class="bk-dropdown">
+        <button class="bk-avatar-btn" data-dropdown-toggle aria-haspopup="true">
+          <span class="bk-avatar bk-avatar-blue bk-avatar-sm">AR</span>
+          <i data-icon="chevron-down" style="width:14px;height:14px;color:var(--bk-muted)"></i>
+        </button>
+        <div class="bk-dropdown-menu" style="min-width:200px">
+          <button class="bk-dropdown-item"><i data-icon="user"></i>Profil Saya</button>
+          <button class="bk-dropdown-item"><i data-icon="settings"></i>Pengaturan Akun</button>
+          <div class="bk-dropdown-divider"></div>
+          <button class="bk-dropdown-item is-danger"><i data-icon="log-out"></i>Keluar</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="bk-content">
+      <div class="bk-content-header">
+        <div>
+          <h1>Dokumentasi &amp; Instalasi</h1>
+          <p class="bk-sub">Panduan lengkap integrasi BKPSDM UI Kit ke <strong>Laravel (Blade)</strong> dan <strong>Nuxt (Vue)</strong>, serta cara <strong>publikasi ke Packagist</strong>.</p>
+        </div>
+        <div class="bk-flex bk-gap-2">
+          <a class="bk-btn bk-btn-outline" href="index.html"><i data-icon="home"></i>Lihat Demo</a>
+          <a class="bk-btn bk-btn-primary" href="components.html"><i data-icon="layers"></i>Pustaka Komponen</a>
+        </div>
+      </div>
+
+      <!-- Alur -->
+      <div class="bk-card bk-mb-6">
+        <div class="bk-card-body">
+          <div class="bk-steps" aria-label="Alur integrasi">
+            <div class="bk-step is-active">
+              <div class="bk-step-head"><span class="bk-step-num">1</span><span class="bk-step-line"></span></div>
+              <div class="bk-step-label">Persiapan</div>
+            </div>
+            <div class="bk-step">
+              <div class="bk-step-head"><span class="bk-step-num">2</span><span class="bk-step-line"></span></div>
+              <div class="bk-step-label">Laravel</div>
+            </div>
+            <div class="bk-step">
+              <div class="bk-step-head"><span class="bk-step-num">3</span><span class="bk-step-line"></span></div>
+              <div class="bk-step-label">Nuxt</div>
+            </div>
+            <div class="bk-step">
+              <div class="bk-step-head"><span class="bk-step-num">4</span></div>
+              <div class="bk-step-label">Packagist</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Prasyarat -->
+      <div class="bk-alert bk-alert-info bk-mb-6">
+        <span class="bk-alert-icon"><i data-icon="info"></i></span>
+        <div>
+          <div class="bk-alert-title">Prasyarat</div>
+          <div class="bk-alert-body"><strong>Laravel:</strong> PHP 8.1+ · Laravel 10/11/12 &middot; <strong>Nuxt:</strong> Node 18+ · Nuxt 3 · <strong>Tanpa build tool</strong> untuk mode manual — kit ini murni HTML/CSS/JS. Chart.js dimuat dari CDN (opsional untuk grafik).</div>
+        </div>
+      </div>
+
+      <!-- Struktur -->
+      <section class="bk-demo-section">
+        <h3><i data-icon="folder" style="width:22px;height:22px;color:var(--bk-primary)"></i>Struktur Paket</h3>
+        <p class="bk-sub">Repo ini siap dipakai sebagai aset statis, paket Composer (Laravel), maupun referensi komponen Vue (Nuxt).</p>
+                <div class="bk-code-block">
+          <div class="bk-code-head">
+            <span class="bk-code-lang"><i data-icon="file-text"></i>Text</span>
+            <div class="bk-flex bk-gap-1">
+              <button class="bk-btn bk-btn-ghost bk-btn-sm" data-code-toggle aria-expanded="false"><i data-icon="chevron-down"></i><span>Lihat Kode</span></button>
+              <button class="bk-btn bk-btn-ghost bk-btn-sm" data-copy-target="#code-dok-struktur"><i data-icon="copy"></i>Salin</button>
+            </div>
+          </div>
+          <pre class="bk-pre bk-code-body" id="code-dok-struktur" data-code="dok-struktur" hidden></pre>
+        </div>
+      </section>
+
+      <!-- ============ LARAVEL ============ -->
+      <section class="bk-demo-section">
+        <h3><i data-icon="briefcase" style="width:22px;height:22px;color:var(--bk-primary)"></i>Instalasi Laravel (Blade)</h3>
+        <p class="bk-sub">Dua cara: <strong>manual</strong> (salin aset) atau <strong>via Composer/Packagist</strong> (disarankan).</p>
+
+        <div class="bk-tabs" data-tabs="laravel">
+          <button class="bk-tab is-active" data-tab-target="#lar-1">Cara Manual</button>
+          <button class="bk-tab" data-tab-target="#lar-2">Via Composer</button>
+        </div>
+
+        <div class="bk-tab-panel is-active is-fade" id="lar-1" data-tab-panel>
+          <p class="bk-fs-sm bk-text-2 bk-mb-4">Cocok untuk prototipe cepat atau bila tidak ingin memakai Composer. Salin folder <span class="bk-code">assets/</span> ke <span class="bk-code">public/</span>.</p>
+                  <div class="bk-code-block">
+          <div class="bk-code-head">
+            <span class="bk-code-lang"><i data-icon="file-text"></i>Blade</span>
+            <div class="bk-flex bk-gap-1">
+              <button class="bk-btn bk-btn-ghost bk-btn-sm" data-code-toggle aria-expanded="false"><i data-icon="chevron-down"></i><span>Lihat Kode</span></button>
+              <button class="bk-btn bk-btn-ghost bk-btn-sm" data-copy-target="#code-laravel-manual"><i data-icon="copy"></i>Salin</button>
+            </div>
+          </div>
+          <pre class="bk-pre bk-code-body" id="code-laravel-manual" data-code="laravel-manual" hidden></pre>
+        </div>
+          <h4 class="bk-mt-6 bk-mb-2">Komponen Blade</h4>
+          <p class="bk-fs-sm bk-text-2 bk-mb-4">Gunakan kelas langsung, atau komponen Blade starter dari folder <span class="bk-code">resources/views/components/</span>.</p>
+                  <div class="bk-code-block">
+          <div class="bk-code-head">
+            <span class="bk-code-lang"><i data-icon="file-text"></i>Blade</span>
+            <div class="bk-flex bk-gap-1">
+              <button class="bk-btn bk-btn-ghost bk-btn-sm" data-code-toggle aria-expanded="false"><i data-icon="chevron-down"></i><span>Lihat Kode</span></button>
+              <button class="bk-btn bk-btn-ghost bk-btn-sm" data-copy-target="#code-laravel-komponen"><i data-icon="copy"></i>Salin</button>
+            </div>
+          </div>
+          <pre class="bk-pre bk-code-body" id="code-laravel-komponen" data-code="laravel-komponen" hidden></pre>
+        </div>
+          <h4 class="bk-mt-6 bk-mb-2">Toast &amp; AJAX</h4>
+          <p class="bk-fs-sm bk-text-2 bk-mb-4">Tampilkan notifikasi dari server dan render ulang ikon pada konten yang dimuat dinamis.</p>
+                  <div class="bk-code-block">
+          <div class="bk-code-head">
+            <span class="bk-code-lang"><i data-icon="file-text"></i>Blade</span>
+            <div class="bk-flex bk-gap-1">
+              <button class="bk-btn bk-btn-ghost bk-btn-sm" data-code-toggle aria-expanded="false"><i data-icon="chevron-down"></i><span>Lihat Kode</span></button>
+              <button class="bk-btn bk-btn-ghost bk-btn-sm" data-copy-target="#code-laravel-toast"><i data-icon="copy"></i>Salin</button>
+            </div>
+          </div>
+          <pre class="bk-pre bk-code-body" id="code-laravel-toast" data-code="laravel-toast" hidden></pre>
+        </div>
+        </div>
+
+        <div class="bk-tab-panel is-fade" id="lar-2" data-tab-panel>
+          <p class="bk-fs-sm bk-text-2 bk-mb-4">Setelah paket terpublikasi di Packagist, integrasi menjadi satu perintah. Provider terdaftar otomatis via <em>Laravel auto-discovery</em>.</p>
+                  <div class="bk-code-block">
+          <div class="bk-code-head">
+            <span class="bk-code-lang"><i data-icon="file-text"></i>Bash</span>
+            <div class="bk-flex bk-gap-1">
+              <button class="bk-btn bk-btn-ghost bk-btn-sm" data-code-toggle aria-expanded="false"><i data-icon="chevron-down"></i><span>Lihat Kode</span></button>
+              <button class="bk-btn bk-btn-ghost bk-btn-sm" data-copy-target="#code-laravel-composer"><i data-icon="copy"></i>Salin</button>
+            </div>
+          </div>
+          <pre class="bk-pre bk-code-body" id="code-laravel-composer" data-code="laravel-composer" hidden></pre>
+        </div>
+        </div>
+      </section>
+
+      <!-- ============ NUXT ============ -->
+      <section class="bk-demo-section">
+        <h3><i data-icon="monitor" style="width:22px;height:22px;color:var(--bk-primary)"></i>Instalasi Nuxt (Vue)</h3>
+        <p class="bk-sub">Opsi A memakai paket resmi IDDS; Opsi B memakai kit ini agar konsisten dengan aplikasi Blade Anda.</p>
+
+        <div class="bk-tabs" data-tabs="nuxt">
+          <button class="bk-tab is-active" data-tab-target="#nuxt-1">Opsi B — Kit Ini</button>
+          <button class="bk-tab" data-tab-target="#nuxt-2">Opsi A — Paket IDDS</button>
+        </div>
+
+        <div class="bk-tab-panel is-active is-fade" id="nuxt-1" data-tab-panel>
+          <p class="bk-fs-sm bk-text-2 bk-mb-4">Salin CSS &amp; JS ke proyek Nuxt, daftarkan di <span class="bk-code">nuxt.config.ts</span>, lalu bungkus komponen sebagai file <span class="bk-code">.vue</span>.</p>
+                  <div class="bk-code-block">
+          <div class="bk-code-head">
+            <span class="bk-code-lang"><i data-icon="file-text"></i>TypeScript</span>
+            <div class="bk-flex bk-gap-1">
+              <button class="bk-btn bk-btn-ghost bk-btn-sm" data-code-toggle aria-expanded="false"><i data-icon="chevron-down"></i><span>Lihat Kode</span></button>
+              <button class="bk-btn bk-btn-ghost bk-btn-sm" data-copy-target="#code-nuxt-config"><i data-icon="copy"></i>Salin</button>
+            </div>
+          </div>
+          <pre class="bk-pre bk-code-body" id="code-nuxt-config" data-code="nuxt-config" hidden></pre>
+        </div>
+                  <div class="bk-code-block">
+          <div class="bk-code-head">
+            <span class="bk-code-lang"><i data-icon="file-text"></i>TypeScript</span>
+            <div class="bk-flex bk-gap-1">
+              <button class="bk-btn bk-btn-ghost bk-btn-sm" data-code-toggle aria-expanded="false"><i data-icon="chevron-down"></i><span>Lihat Kode</span></button>
+              <button class="bk-btn bk-btn-ghost bk-btn-sm" data-copy-target="#code-nuxt-plugin"><i data-icon="copy"></i>Salin</button>
+            </div>
+          </div>
+          <pre class="bk-pre bk-code-body" id="code-nuxt-plugin" data-code="nuxt-plugin" hidden></pre>
+        </div>
+                  <div class="bk-code-block">
+          <div class="bk-code-head">
+            <span class="bk-code-lang"><i data-icon="file-text"></i>Vue</span>
+            <div class="bk-flex bk-gap-1">
+              <button class="bk-btn bk-btn-ghost bk-btn-sm" data-code-toggle aria-expanded="false"><i data-icon="chevron-down"></i><span>Lihat Kode</span></button>
+              <button class="bk-btn bk-btn-ghost bk-btn-sm" data-copy-target="#code-nuxt-komponen"><i data-icon="copy"></i>Salin</button>
+            </div>
+          </div>
+          <pre class="bk-pre bk-code-body" id="code-nuxt-komponen" data-code="nuxt-komponen" hidden></pre>
+        </div>
+        </div>
+
+        <div class="bk-tab-panel is-fade" id="nuxt-2" data-tab-panel>
+          <p class="bk-fs-sm bk-text-2 bk-mb-4">Paket Vue resmi INA Digital Design System — komponen berstandar nasional. Cocok bila Anda tidak memerlukan konsistensi visual penuh dengan aplikasi Blade.</p>
+          <div class="bk-pre" style="font-size:12.5px"># Pasang paket resmi IDDS (Vue)
+npm install @inadigital-ui/vue@^1.1.40
+
+// nuxt.config.ts
+export default defineNuxtConfig({
+  css: ['@inadigital-ui/vue/index.css']
+})</div>
+        </div>
+      </section>
+
+      <!-- ============ TEMA & API ============ -->
+      <section class="bk-demo-section">
+        <h3><i data-icon="sun" style="width:22px;height:22px;color:var(--bk-primary)"></i>Tema &amp; API JavaScript</h3>
+        <p class="bk-sub">Tema terang/gelap/ikuti-sistem tersimpan di <span class="bk-code">localStorage</span>. Semua interaksi tersedia lewat API global <span class="bk-code">window.Bk</span>.</p>
+
+        <div class="bk-grid">
+          <div class="bk-span-6">
+            <div class="bk-card">
+              <div class="bk-card-header"><div class="bk-card-title">API Bk</div></div>
+              <div class="bk-card-body bk-flush">
+                <div class="bk-table-wrap" style="border:none;border-radius:0">
+                  <table class="bk-table bk-table-compact">
+                    <thead><tr><th>Metode</th><th>Keterangan</th></tr></thead>
+                    <tbody>
+                      <tr><td><span class="bk-code">Bk.setTheme(mode)</span></td><td>Atur tema: <span class="bk-code">'light'</span> | <span class="bk-code">'dark'</span> | <span class="bk-code">'system'</span></td></tr>
+                      <tr><td><span class="bk-code">Bk.toast(opts)</span></td><td>Notifikasi — <span class="bk-code">{ type, title, message, duration }</span></td></tr>
+                      <tr><td><span class="bk-code">Bk.replaceIcons(root)</span></td><td>Render ikon <span class="bk-code">&lt;i data-icon&gt;</span> dalam <span class="bk-code">root</span></td></tr>
+                      <tr><td><span class="bk-code">Bk.animateCounters(root)</span></td><td>Animasi angka <span class="bk-code">data-counter</span></td></tr>
+                      <tr><td><span class="bk-code">Bk.openModal / Bk.openDrawer</span></td><td>Buka modal / drawer via selektor id</td></tr>
+                      <tr><td><span class="bk-code">Bk.icons</span></td><td>Kamus ikon SVG (56 ikon)</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bk-span-6">
+            <div class="bk-card">
+              <div class="bk-card-header"><div class="bk-card-title">Atribut data</div></div>
+              <div class="bk-card-body bk-flush">
+                <div class="bk-table-wrap" style="border:none;border-radius:0">
+                  <table class="bk-table bk-table-compact">
+                    <thead><tr><th>Atribut</th><th>Fungsi</th></tr></thead>
+                    <tbody>
+                      <tr><td><span class="bk-code">data-theme-toggle</span></td><td>Toggle terang/gelap</td></tr>
+                      <tr><td><span class="bk-code">data-modal-open / -close</span></td><td>Buka/tutup modal</td></tr>
+                      <tr><td><span class="bk-code">data-drawer-open / -close</span></td><td>Buka/tutup drawer</td></tr>
+                      <tr><td><span class="bk-code">data-dropdown-toggle</span></td><td>Toggle menu dropdown</td></tr>
+                      <tr><td><span class="bk-code">data-tab-target</span></td><td>Aktifkan tab</td></tr>
+                      <tr><td><span class="bk-code">data-select-search</span></td><td>Select combobox pencarian</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ PACKAGIST ============ -->
+      <section class="bk-demo-section">
+        <h3><i data-icon="database" style="width:22px;height:22px;color:var(--bk-primary)"></i>Publikasi ke Packagist</h3>
+        <p class="bk-sub">Kit ini sudah menyertakan <span class="bk-code">composer.json</span> — siap dipublikasikan sebagai paket Laravel.</p>
+
+        <div class="bk-grid bk-mb-4">
+          <div class="bk-span-6">
+            <div class="bk-list" style="border:1px solid var(--bk-border);border-radius:var(--bk-r-md)">
+              <div class="bk-list-item"><i data-icon="check-circle" style="color:var(--bk-success)"></i><div class="bk-flex-col bk-gap-1" style="flex:1"><span class="bk-list-item-title">composer.json valid</span><span class="bk-list-item-sub">name, license, autoload, &amp; laravel provider</span></div></div>
+              <div class="bk-list-item"><i data-icon="check-circle" style="color:var(--bk-success)"></i><div class="bk-flex-col bk-gap-1" style="flex:1"><span class="bk-list-item-title">LICENSE (MIT)</span><span class="bk-list-item-sub">syarat wajib Packagist</span></div></div>
+              <div class="bk-list-item"><i data-icon="check-circle" style="color:var(--bk-success)"></i><div class="bk-flex-col bk-gap-1" style="flex:1"><span class="bk-list-item-title">Service provider + 5 komponen Blade</span><span class="bk-list-item-sub">auto-discovery &amp; vendor:publish</span></div></div>
+            </div>
+          </div>
+          <div class="bk-span-6 bk-flex-col bk-gap-3">
+            <div class="bk-alert bk-alert-warning">
+              <span class="bk-alert-icon"><i data-icon="alert"></i></span>
+              <div><div class="bk-alert-title">Sebelum submit</div><div class="bk-alert-body">Ubah nilai <span class="bk-code">"name"</span> di composer.json menjadi namespace vendor Anda (mis. <span class="bk-code">your-org/ui-kit</span>) dan sesuaikan namespace PHP <span class="bk-code">Bkpsdm\UiKit</span> bila perlu.</div></div>
+            </div>
+          </div>
+        </div>
+
+                <div class="bk-code-block">
+          <div class="bk-code-head">
+            <span class="bk-code-lang"><i data-icon="file-text"></i>JSON</span>
+            <div class="bk-flex bk-gap-1">
+              <button class="bk-btn bk-btn-ghost bk-btn-sm" data-code-toggle aria-expanded="false"><i data-icon="chevron-down"></i><span>Lihat Kode</span></button>
+              <button class="bk-btn bk-btn-ghost bk-btn-sm" data-copy-target="#code-packagist-json"><i data-icon="copy"></i>Salin</button>
+            </div>
+          </div>
+          <pre class="bk-pre bk-code-body" id="code-packagist-json" data-code="packagist-json" hidden></pre>
+        </div>
+        <h4 class="bk-mt-6 bk-mb-2">Langkah rilis</h4>
+                <div class="bk-code-block">
+          <div class="bk-code-head">
+            <span class="bk-code-lang"><i data-icon="file-text"></i>Bash</span>
+            <div class="bk-flex bk-gap-1">
+              <button class="bk-btn bk-btn-ghost bk-btn-sm" data-code-toggle aria-expanded="false"><i data-icon="chevron-down"></i><span>Lihat Kode</span></button>
+              <button class="bk-btn bk-btn-ghost bk-btn-sm" data-copy-target="#code-packagist-publish"><i data-icon="copy"></i>Salin</button>
+            </div>
+          </div>
+          <pre class="bk-pre bk-code-body" id="code-packagist-publish" data-code="packagist-publish" hidden></pre>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="bk-demo-section">
+        <h3><i data-icon="help" style="width:22px;height:22px;color:var(--bk-primary)"></i>FAQ &amp; Troubleshooting</h3>
+        <div class="bk-accordion" data-mode="single">
+          <div class="bk-accordion-item is-open">
+            <button class="bk-accordion-header" aria-expanded="true"><i data-icon="info"></i>Ikon tidak muncul di Laravel setelah AJAX<i data-icon="chevron-down" class="chev"></i></button>
+            <div class="bk-accordion-content"><div class="bk-accordion-body">Ikon dirender oleh JS saat <span class="bk-code">DOMContentLoaded</span>. Untuk konten yang dimuat via fetch, panggil <span class="bk-code">Bk.replaceIcons(container)</span> setelah menyisipkan HTML.</div></div>
+          </div>
+          <div class="bk-accordion-item">
+            <button class="bk-accordion-header" aria-expanded="false"><i data-icon="chart"></i>Grafik tidak tampil (offline)<i data-icon="chevron-down" class="chev"></i></button>
+            <div class="bk-accordion-content"><div class="bk-accordion-body">Chart.js dimuat dari CDN. Untuk intranet tanpa internet, unduh <span class="bk-code">chart.umd.min.js</span> lalu ganti URL CDN dengan path lokal.</div></div>
+          </div>
+          <div class="bk-accordion-item">
+            <button class="bk-accordion-header" aria-expanded="false"><i data-icon="layers"></i>Bagaimana mengganti warna instansi?<i data-icon="chevron-down" class="chev"></i></button>
+            <div class="bk-accordion-content"><div class="bk-accordion-body">Ganti nilai skala <span class="bk-code">--ina-brand-25 … 900</span> di <span class="bk-code">ui-kit.css</span> (Mode Merek). Seluruh komponen otomatis mengikuti, tanpa mengubah satu pun kelas.</div></div>
+          </div>
+          <div class="bk-accordion-item">
+            <button class="bk-accordion-header" aria-expanded="false"><i data-icon="moon"></i>Dark mode default saat pertama buka<i data-icon="chevron-down" class="chev"></i></button>
+            <div class="bk-accordion-content"><div class="bk-accordion-body">Tambahkan <span class="bk-code">data-theme="dark"</span> pada <span class="bk-code">&lt;html&gt;</span>, atau panggil <span class="bk-code">Bk.setTheme('dark')</span> di awal. Pengguna tetap bisa mengubahnya via dropdown tema.</div></div>
+          </div>
+          <div class="bk-accordion-item">
+            <button class="bk-accordion-header" aria-expanded="false"><i data-icon="refresh"></i>Cara update versi paket di aplikasi<i data-icon="chevron-down" class="chev"></i></button>
+            <div class="bk-accordion-content"><div class="bk-accordion-body">Jalankan <span class="bk-code">composer update bkpsdm/ui-kit</span> setelah rilis tag baru, lalu <span class="bk-code">php artisan vendor:publish --tag=bkpsdm-assets --force</span> untuk memperbarui aset.</div></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bk-footer">
+      <span>&copy; 2026 BKPSDM — UI Kit v1.0 &middot; Selaras INA Digital Design System</span>
+      <span>Laravel Blade &middot; Nuxt/Vue &middot; Packagist-ready</span>
+    </footer>
+  </div>
+</div>
+
+<script src="assets/js/ui-kit.js"></script>
+<script src="assets/js/samples.js"></script>
+</body>
+</html>

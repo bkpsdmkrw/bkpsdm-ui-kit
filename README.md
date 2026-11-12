@@ -8,6 +8,7 @@ Design system & admin theme untuk aplikasi **BKPSDM** (Badan Kepegawaian & Penge
 ui-kit/
 ├── index.html            # Demo Dashboard Analitik (grafik lengkap)
 ├── components.html       # Pustaka Komponen (menu pohon + contoh kode tiap komponen)
+├── dokumentasi.html      # Panduan instalasi Laravel & Nuxt + publikasi Packagist
 ├── form.html             # Contoh: Formulir wizard multi-tahap
 ├── table.html            # Contoh: Tabel data (filter, bulk action, pagination)
 ├── profile.html          # Contoh: Profil pengguna + radar kompetensi
@@ -16,6 +17,10 @@ ui-kit/
 ├── pensiun.html          # Contoh: Manajemen pensiun (BUP + kelengkapan berkas)
 ├── login.html            # Contoh: Halaman autentikasi (split-screen)
 ├── 404.html              # Contoh: Halaman error
+├── composer.json         # Paket Composer (siap publikasi ke Packagist)
+├── LICENSE               # Lisensi MIT
+├── src/                  # Service provider Laravel
+├── resources/views/components/  # Komponen Blade starter (<x-bk::...>)
 ├── assets/
 │   ├── css/ui-kit.css    # Design system: tokens + seluruh komponen
 │   └── js/
@@ -79,6 +84,28 @@ python3 -m http.server 8000
 ```
 
 > Chart.js dimuat dari CDN; grafik membutuhkan koneksi internet (ada fallback pesan bila gagal).
+
+## Publikasi ke Packagist
+
+Kit ini **siap dipublikasikan sebagai paket Composer** — lengkap dengan `composer.json`, lisensi MIT, service provider Laravel, dan 5 komponen Blade starter. Panduan rinci ada di halaman **`dokumentasi.html`** (bagian "Publikasi ke Packagist").
+
+Ringkasnya:
+
+```bash
+composer validate
+git tag v1.0.0 && git push origin main --tags
+# daftarkan URL repo di https://packagist.org/packages/submit
+```
+
+Lalu di aplikasi Laravel:
+
+```bash
+composer require bkpsdm/ui-kit
+php artisan vendor:publish --tag=bkpsdm-assets
+php artisan vendor:publish --tag=bkpsdm-views
+```
+
+> Ganti `"name": "bkpsdm/ui-kit"` di `composer.json` dengan namespace vendor Anda sebelum submit.
 
 ---
 
