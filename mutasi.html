@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mutasi &amp; Rotasi — BKPSDM UI Kit</title>
+  <meta name="description" content="Contoh halaman mutasi dan rotasi pegawai BKPSDM UI Kit.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/ui-kit.css">
+</head>
+<body>
+<div class="bk-app">
+
+  <aside class="bk-sidebar" aria-label="Navigasi utama">
+    <div class="bk-sidebar-header">
+      <div class="bk-brand-mark" aria-hidden="true">BK</div>
+      <div>
+        <div class="bk-brand-name">BKPSDM</div>
+        <div class="bk-brand-sub">UI Kit &middot; Admin Theme</div>
+      </div>
+      <button class="bk-icon-btn bk-ms-auto" data-sidebar-close aria-label="Tutup menu"><i data-icon="x"></i></button>
+    </div>
+    <nav class="bk-sidebar-nav">
+      <div class="bk-nav-group">
+        <div class="bk-nav-group-title">Utama</div>
+        <a class="bk-nav-link" href="index.html"><i data-icon="home"></i>Dashboard</a>
+        <a class="bk-nav-link" href="index.html#analitik"><i data-icon="chart"></i>Analitik<span class="bk-nav-badge bk-soft">12</span></a>
+      </div>
+      <div class="bk-nav-group">
+        <div class="bk-nav-group-title">Contoh Halaman</div>
+        <a class="bk-nav-link" href="form.html"><i data-icon="edit"></i>Formulir</a>
+        <a class="bk-nav-link" href="table.html"><i data-icon="database"></i>Tabel Data</a>
+        <a class="bk-nav-link" href="profile.html"><i data-icon="user"></i>Profil Pengguna</a>
+        <a class="bk-nav-link" href="profil-asn.html"><i data-icon="id-card"></i>Profil ASN</a>
+        <a class="bk-nav-link" href="mutasi.html"><i data-icon="arrow-swap"></i>Mutasi &amp; Rotasi</a>
+        <a class="bk-nav-link" href="pensiun.html"><i data-icon="log-out"></i>Pensiun</a>
+        <a class="bk-nav-link" href="login.html"><i data-icon="lock"></i>Halaman Login</a>
+        <a class="bk-nav-link" href="404.html"><i data-icon="alert"></i>Halaman 404</a>
+      </div>
+      <div class="bk-nav-group">
+        <div class="bk-nav-group-title">Kepegawaian</div>
+        <a class="bk-nav-link" href="table.html"><i data-icon="users"></i>Data Pegawai<span class="bk-nav-badge">2.8k</span></a>
+        <a class="bk-nav-link" href="profil-asn.html"><i data-icon="id-card"></i>Profil ASN</a>
+        <a class="bk-nav-link is-active" href="mutasi.html"><i data-icon="arrow-swap"></i>Mutasi &amp; Rotasi</a>
+        <a class="bk-nav-link" href="pensiun.html"><i data-icon="log-out"></i>Pensiun</a>
+      </div>
+      <div class="bk-nav-group">
+        <div class="bk-nav-group-title">Pengembangan</div>
+        <a class="bk-nav-link" href="#"><i data-icon="graduation"></i>Diklat<span class="bk-nav-badge bk-soft">24</span></a>
+        <a class="bk-nav-link" href="#"><i data-icon="award"></i>Sertifikasi</a>
+        <a class="bk-nav-link" href="#"><i data-icon="target"></i>Kompetensi</a>
+        <a class="bk-nav-link" href="#"><i data-icon="monitor"></i>E-Learning</a>
+      </div>
+      <div class="bk-nav-group">
+        <div class="bk-nav-group-title">Sistem</div>
+        <a class="bk-nav-link" href="components.html"><i data-icon="layers"></i>Komponen UI</a>
+        <a class="bk-nav-link" href="#"><i data-icon="settings"></i>Pengaturan</a>
+        <a class="bk-nav-link" href="#"><i data-icon="help"></i>Bantuan</a>
+      </div>
+    </nav>
+    <div class="bk-sidebar-footer">
+      <div class="bk-avatar bk-avatar-blue">AR</div>
+      <div class="bk-flex-col bk-gap-1 bk-sidebar-foot-text" style="min-width:0">
+        <span class="bk-fw-700 bk-fs-sm bk-truncate">Admin BKPSDM</span>
+        <span class="bk-fs-xs bk-muted">Super Administrator</span>
+      </div>
+      <button class="bk-icon-btn bk-ms-auto" data-tooltip="Keluar" data-tooltip-pos="left" aria-label="Keluar"><i data-icon="log-out"></i></button>
+    </div>
+  </aside>
+  <div class="bk-sidebar-backdrop" aria-hidden="true"></div>
+
+  <div class="bk-main">
+    <header class="bk-topbar">
+      <button class="bk-icon-btn" data-sidebar-toggle aria-label="Buka menu"><i data-icon="menu"></i></button>
+      <div>
+        <div class="bk-topbar-title">Mutasi &amp; Rotasi</div>
+        <nav class="bk-crumb" aria-label="Breadcrumb">
+          <a href="index.html">Beranda</a><i data-icon="chevron-right"></i><span>Kepegawaian</span>
+        </nav>
+      </div>
+      <div class="bk-topbar-search bk-ms-auto">
+        <i data-icon="search"></i>
+        <input type="search" placeholder="Cari pegawai…" aria-label="Pencarian global">
+        <kbd>/</kbd>
+      </div>
+      <div class="bk-dropdown">
+        <button class="bk-icon-btn" data-dropdown-toggle data-tooltip="Pilih tema" aria-label="Pilih tema" aria-haspopup="true"><span data-theme-icon></span></button>
+        <div class="bk-dropdown-menu" style="min-width:200px">
+          <div class="bk-dropdown-header"><div class="bk-dropdown-title">Tampilan</div><div class="bk-dropdown-sub">Pilih tema aplikasi</div></div>
+          <button class="bk-dropdown-item bk-theme-option" data-theme-set="light"><i data-icon="sun"></i>Terang<span class="bk-theme-check"><i data-icon="check"></i></span></button>
+          <button class="bk-dropdown-item bk-theme-option" data-theme-set="dark"><i data-icon="moon"></i>Gelap<span class="bk-theme-check"><i data-icon="check"></i></span></button>
+          <button class="bk-dropdown-item bk-theme-option" data-theme-set="system"><i data-icon="monitor"></i>Ikuti Sistem<span class="bk-theme-check"><i data-icon="check"></i></span></button>
+        </div>
+      </div>
+      <div class="bk-dropdown">
+        <button class="bk-avatar-btn" data-dropdown-toggle aria-haspopup="true">
+          <span class="bk-avatar bk-avatar-blue bk-avatar-sm">AR</span>
+          <i data-icon="chevron-down" style="width:14px;height:14px;color:var(--bk-muted)"></i>
+        </button>
+        <div class="bk-dropdown-menu" style="min-width:200px">
+          <button class="bk-dropdown-item"><i data-icon="user"></i>Profil Saya</button>
+          <button class="bk-dropdown-item"><i data-icon="settings"></i>Pengaturan Akun</button>
+          <div class="bk-dropdown-divider"></div>
+          <button class="bk-dropdown-item is-danger"><i data-icon="log-out"></i>Keluar</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="bk-content">
+      <div class="bk-content-header">
+        <div>
+          <h1>Mutasi &amp; Rotasi Pegawai</h1>
+          <p class="bk-sub">Perpindahan, rotasi jabatan, dan promosi — <span class="bk-mono">486</span> usulan tahun 2026.</p>
+        </div>
+        <div class="bk-flex bk-gap-2">
+          <button class="bk-btn bk-btn-outline" onclick="Bk.toast({type:'success',title:'Laporan diekspor',message:'Rekap mutasi 2026 berhasil diunduh.'})"><i data-icon="download"></i>Ekspor</button>
+          <a class="bk-btn bk-btn-primary" href="form.html"><i data-icon="plus"></i>Ajukan Mutasi</a>
+        </div>
+      </div>
+
+      <!-- Stat -->
+      <div class="bk-grid bk-mb-6">
+        <div class="bk-span-3">
+          <div class="bk-card bk-stat"><div class="bk-card-body">
+            <div class="bk-stat-top">
+              <div><div class="bk-stat-label">Total Usulan 2026</div><div class="bk-stat-value"><span data-counter="486">0</span></div><span class="bk-fs-xs bk-muted">+8,7% vs 2025</span></div>
+              <div class="bk-stat-icon bk-stat-icon-primary"><i data-icon="arrow-swap"></i></div>
+            </div>
+          </div></div>
+        </div>
+        <div class="bk-span-3">
+          <div class="bk-card bk-stat"><div class="bk-card-body">
+            <div class="bk-stat-top">
+              <div><div class="bk-stat-label">Menunggu Persetujuan</div><div class="bk-stat-value"><span data-counter="23">0</span></div><span class="bk-fs-xs bk-muted">perlu tindakan</span></div>
+              <div class="bk-stat-icon bk-stat-icon-warning"><i data-icon="clock"></i></div>
+            </div>
+          </div></div>
+        </div>
+        <div class="bk-span-3">
+          <div class="bk-card bk-stat"><div class="bk-card-body">
+            <div class="bk-stat-top">
+              <div><div class="bk-stat-label">Disetujui</div><div class="bk-stat-value"><span data-counter="412">0</span></div><span class="bk-stat-delta up"><i data-icon="trend-up"></i>+12,1%</span></div>
+              <div class="bk-stat-icon bk-stat-icon-success"><i data-icon="check-circle"></i></div>
+            </div>
+          </div></div>
+        </div>
+        <div class="bk-span-3">
+          <div class="bk-card bk-stat"><div class="bk-card-body">
+            <div class="bk-stat-top">
+              <div><div class="bk-stat-label">Ditolak</div><div class="bk-stat-value"><span data-counter="51">0</span></div><span class="bk-fs-xs bk-muted">berkas tidak lengkap</span></div>
+              <div class="bk-stat-icon bk-stat-icon-danger"><i data-icon="x-circle"></i></div>
+            </div>
+          </div></div>
+        </div>
+      </div>
+
+      <!-- Filter -->
+      <div class="bk-card bk-mb-6">
+        <div class="bk-card-body bk-flex bk-gap-3 bk-wrap" style="padding:var(--bk-sp-4) var(--bk-sp-5)">
+          <div class="bk-input-icon" style="flex:1;min-width:220px">
+            <i data-icon="search"></i>
+            <input class="bk-input" type="search" placeholder="Cari nama atau NIP…" aria-label="Cari pegawai">
+          </div>
+          <select class="bk-select" style="width:170px" aria-label="Filter jenis">
+            <option>Semua Jenis</option><option>Mutasi</option><option>Rotasi</option><option>Promosi</option>
+          </select>
+          <select class="bk-select" style="width:160px" aria-label="Filter status">
+            <option>Semua Status</option><option>Menunggu</option><option>Disetujui</option><option>Ditolak</option>
+          </select>
+          <button class="bk-btn bk-btn-primary"><i data-icon="filter"></i>Terapkan</button>
+          <button class="bk-btn bk-btn-ghost" onclick="Bk.toast({type:'info',title:'Filter direset',message:'Semua filter kembali ke nilai awal.'})">Reset</button>
+        </div>
+      </div>
+
+      <!-- Tabel -->
+      <div class="bk-card">
+        <div class="bk-card-body bk-flush">
+          <div class="bk-table-wrap" style="border:none;border-radius:0">
+            <table class="bk-table bk-table-hover">
+              <thead>
+                <tr>
+                  <th class="bk-th-sort" data-dir="asc">Pegawai</th>
+                  <th class="bk-th-sort">Jenis</th>
+                  <th>Dari → Ke</th>
+                  <th class="bk-th-sort">TMT</th>
+                  <th>Status</th>
+                  <th class="bk-text-right">Aksi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><div class="bk-flex bk-gap-3"><span class="bk-avatar bk-avatar-blue bk-avatar-sm">DS</span><div class="bk-flex-col bk-gap-1"><span class="bk-fw-700">Dewi Sartika, S.Kom</span><span class="bk-fs-xs bk-muted bk-mono">198503122009012008</span></div></div></td>
+                  <td data-sort="Promosi"><span class="bk-badge bk-badge-soft-success">Promosi</span></td>
+                  <td><span class="bk-fs-sm">Bidang Kepegawaian</span> <i data-icon="arrow-right" style="width:12px;height:12px;color:var(--bk-muted)"></i> <span class="bk-fs-sm bk-fw-600">Bidang Data &amp; Informasi</span></td>
+                  <td data-sort="2026-12-01">01 Des 2026</td>
+                  <td><span class="bk-badge bk-badge-soft-success"><span class="bk-badge-dot"></span>Disetujui</span></td>
+                  <td class="bk-text-right">
+                    <div class="bk-flex bk-gap-1" style="justify-content:flex-end">
+                      <button class="bk-btn bk-btn-soft-primary bk-btn-sm" data-drawer-open="#drawer-mutasi">Detail</button>
+                      <button class="bk-icon-btn bk-btn-sm" data-tooltip="Cetak SK" aria-label="Cetak SK" onclick="Bk.toast({type:'success',title:'SK diunduh',message:'SK mutasi Dewi Sartika diunduh.'})"><i data-icon="print"></i></button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><div class="bk-flex bk-gap-3"><span class="bk-avatar bk-avatar-green bk-avatar-sm">BA</span><div class="bk-flex-col bk-gap-1"><span class="bk-fw-700">Budi Antoro, S.E.</span><span class="bk-fs-xs bk-muted bk-mono">199001152014021004</span></div></div></td>
+                  <td data-sort="Mutasi"><span class="bk-badge bk-badge-soft-info">Mutasi</span></td>
+                  <td><span class="bk-fs-sm">Badan Kepegawaian</span> <i data-icon="arrow-right" style="width:12px;height:12px;color:var(--bk-muted)"></i> <span class="bk-fs-sm bk-fw-600">Dinas Pendidikan</span></td>
+                  <td data-sort="2026-11-15">15 Nov 2026</td>
+                  <td><span class="bk-badge bk-badge-soft-warning"><span class="bk-badge-dot"></span>Menunggu</span></td>
+                  <td class="bk-text-right">
+                    <div class="bk-flex bk-gap-1" style="justify-content:flex-end">
+                      <button class="bk-btn bk-btn-soft-primary bk-btn-sm" data-drawer-open="#drawer-mutasi">Detail</button>
+                      <button class="bk-btn bk-btn-soft-success bk-btn-sm" onclick="Bk.toast({type:'success',title:'Disetujui',message:'Usulan mutasi Budi Antoro disetujui.'})"><i data-icon="check"></i>Setujui</button>
+                      <button class="bk-btn bk-btn-soft-danger bk-btn-sm" onclick="Bk.toast({type:'danger',title:'Ditolak',message:'Usulan mutasi Budi Antoro ditolak.'})"><i data-icon="x"></i>Tolak</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><div class="bk-flex bk-gap-3"><span class="bk-avatar bk-avatar-orange bk-avatar-sm">CP</span><div class="bk-flex-col bk-gap-1"><span class="bk-fw-700">Citra Purnama, S.Psi.</span><span class="bk-fs-xs bk-muted bk-mono">199207082019032012</span></div></div></td>
+                  <td data-sort="Rotasi"><span class="bk-badge bk-badge-soft-primary">Rotasi</span></td>
+                  <td><span class="bk-fs-sm">Subbid Diklat</span> <i data-icon="arrow-right" style="width:12px;height:12px;color:var(--bk-muted)"></i> <span class="bk-fs-sm bk-fw-600">Subbid Sertifikasi</span></td>
+                  <td data-sort="2026-11-20">20 Nov 2026</td>
+                  <td><span class="bk-badge bk-badge-soft-warning"><span class="bk-badge-dot"></span>Menunggu</span></td>
+                  <td class="bk-text-right">
+                    <div class="bk-flex bk-gap-1" style="justify-content:flex-end">
+                      <button class="bk-btn bk-btn-soft-primary bk-btn-sm" data-drawer-open="#drawer-mutasi">Detail</button>
+                      <button class="bk-btn bk-btn-soft-success bk-btn-sm" onclick="Bk.toast({type:'success',title:'Disetujui',message:'Usulan rotasi Citra Purnama disetujui.'})"><i data-icon="check"></i>Setujui</button>
+                      <button class="bk-btn bk-btn-soft-danger bk-btn-sm" onclick="Bk.toast({type:'danger',title:'Ditolak',message:'Usulan rotasi Citra Purnama ditolak.'})"><i data-icon="x"></i>Tolak</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><div class="bk-flex bk-gap-3"><span class="bk-avatar bk-avatar-ink bk-avatar-sm">FA</span><div class="bk-flex-col bk-gap-1"><span class="bk-fw-700">Fajar Aditya, S.T., M.T.</span><span class="bk-fs-xs bk-muted bk-mono">198811202015031007</span></div></div></td>
+                  <td data-sort="Promosi"><span class="bk-badge bk-badge-soft-success">Promosi</span></td>
+                  <td><span class="bk-fs-sm">Kabid Data &amp; Informasi</span> <i data-icon="arrow-right" style="width:12px;height:12px;color:var(--bk-muted)"></i> <span class="bk-fs-sm bk-fw-600">Sekretaris Badan</span></td>
+                  <td data-sort="2026-10-01">01 Okt 2026</td>
+                  <td><span class="bk-badge bk-badge-soft-success"><span class="bk-badge-dot"></span>Disetujui</span></td>
+                  <td class="bk-text-right">
+                    <div class="bk-flex bk-gap-1" style="justify-content:flex-end">
+                      <button class="bk-btn bk-btn-soft-primary bk-btn-sm" data-drawer-open="#drawer-mutasi">Detail</button>
+                      <button class="bk-icon-btn bk-btn-sm" data-tooltip="Cetak SK" aria-label="Cetak SK" onclick="Bk.toast({type:'success',title:'SK diunduh',message:'SK mutasi Fajar Aditya diunduh.'})"><i data-icon="print"></i></button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><div class="bk-flex bk-gap-3"><span class="bk-avatar bk-avatar-orange bk-avatar-sm">RS</span><div class="bk-flex-col bk-gap-1"><span class="bk-fw-700">Rudi Santoso, S.Kom.</span><span class="bk-fs-xs bk-muted bk-mono">198904172013021009</span></div></div></td>
+                  <td data-sort="Mutasi"><span class="bk-badge bk-badge-soft-info">Mutasi</span></td>
+                  <td><span class="bk-fs-sm">Badan Kepegawaian</span> <i data-icon="arrow-right" style="width:12px;height:12px;color:var(--bk-muted)"></i> <span class="bk-fs-sm bk-fw-600">Dinas Kominfo</span></td>
+                  <td data-sort="2026-09-15">15 Sep 2026</td>
+                  <td><span class="bk-badge bk-badge-soft-danger"><span class="bk-badge-dot"></span>Ditolak</span></td>
+                  <td class="bk-text-right">
+                    <div class="bk-flex bk-gap-1" style="justify-content:flex-end">
+                      <button class="bk-btn bk-btn-soft-primary bk-btn-sm" data-drawer-open="#drawer-mutasi">Detail</button>
+                      <button class="bk-icon-btn bk-btn-sm" data-tooltip="Cetak SK" aria-label="Cetak SK" onclick="Bk.toast({type:'info',title:'Ajukan ulang',message:'Perbaiki berkas lalu ajukan ulang.'})"><i data-icon="refresh"></i></button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="bk-table-foot bk-flex bk-between bk-wrap" style="gap:var(--bk-sp-3)">
+            <span>Menampilkan 1–5 dari 486 usulan</span>
+            <div class="bk-pagination">
+              <button class="bk-page is-disabled" aria-label="Sebelumnya"><i data-icon="chevron-left"></i></button>
+              <button class="bk-page is-active">1</button>
+              <button class="bk-page">2</button>
+              <button class="bk-page">3</button>
+              <span class="bk-muted bk-fs-xs">…</span>
+              <button class="bk-page">98</button>
+              <button class="bk-page" aria-label="Berikutnya"><i data-icon="chevron-right"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="bk-footer">
+      <span>&copy; 2026 BKPSDM — UI Kit v1.0</span>
+      <span>Halaman contoh: Mutasi &amp; Rotasi</span>
+    </footer>
+  </div>
+</div>
+
+<!-- Drawer detail mutasi -->
+<div class="bk-drawer-backdrop" id="drawer-mutasi" role="dialog" aria-modal="true" aria-labelledby="dm-title">
+  <aside class="bk-drawer bk-drawer-right">
+    <div class="bk-drawer-header">
+      <div class="bk-drawer-title" id="dm-title">Detail Usulan Mutasi</div>
+      <button class="bk-icon-btn bk-ms-auto" data-drawer-close aria-label="Tutup"><i data-icon="x"></i></button>
+    </div>
+    <div class="bk-drawer-body">
+      <div class="bk-flex bk-gap-3 bk-mb-4" style="align-items:center">
+        <span class="bk-avatar bk-avatar-lg bk-avatar-blue">DS</span>
+        <div class="bk-flex-col bk-gap-1">
+          <span class="bk-fw-700">Dewi Sartika, S.Kom</span>
+          <span class="bk-fs-xs bk-muted bk-mono">19850312 200901 2 008</span>
+          <span class="bk-badge bk-badge-soft-success" style="align-self:flex-start"><span class="bk-badge-dot"></span>Promosi — Disetujui</span>
+        </div>
+      </div>
+
+      <div class="bk-list bk-mb-4" style="border:1px solid var(--bk-border);border-radius:var(--bk-r-md)">
+        <div class="bk-list-item bk-between"><span class="bk-muted">Jenis</span><span class="bk-fw-600">Promosi Jabatan</span></div>
+        <div class="bk-list-item bk-between"><span class="bk-muted">Dari</span><span class="bk-fw-600">Pranata Komputer — Bidang Kepegawaian</span></div>
+        <div class="bk-list-item bk-between"><span class="bk-muted">Ke</span><span class="bk-fw-600">Pranata Komputer Ahli Muda — Bidang Data &amp; Informasi</span></div>
+        <div class="bk-list-item bk-between"><span class="bk-muted">TMT</span><span class="bk-fw-600 bk-mono">01 Des 2026</span></div>
+        <div class="bk-list-item bk-between"><span class="bk-muted">No. SK</span><span class="bk-fw-600 bk-mono">821/217/BKPSDM/2026</span></div>
+      </div>
+
+      <div class="bk-overline bk-mb-2">Alur Persetujuan</div>
+      <div class="bk-timeline">
+        <div class="bk-timeline-item">
+          <span class="bk-timeline-dot success"></span>
+          <div class="bk-timeline-title">Usulan diajukan</div>
+          <div class="bk-timeline-text">Oleh Admin BKPSDM.</div>
+          <div class="bk-timeline-time"><i data-icon="clock"></i>05 Nov 2026</div>
+        </div>
+        <div class="bk-timeline-item">
+          <span class="bk-timeline-dot success"></span>
+          <div class="bk-timeline-title">Verifikasi berkas</div>
+          <div class="bk-timeline-text">Berkas lengkap — SK pangkat terakhir valid.</div>
+          <div class="bk-timeline-time"><i data-icon="clock"></i>07 Nov 2026</div>
+        </div>
+        <div class="bk-timeline-item">
+          <span class="bk-timeline-dot success"></span>
+          <div class="bk-timeline-title">Persetujuan Kepala Badan</div>
+          <div class="bk-timeline-text">Disetujui dengan catatan penyesuaian TMT.</div>
+          <div class="bk-timeline-time"><i data-icon="clock"></i>10 Nov 2026</div>
+        </div>
+        <div class="bk-timeline-item">
+          <span class="bk-timeline-dot primary"></span>
+          <div class="bk-timeline-title">Penerbitan SK</div>
+          <div class="bk-timeline-text">SK sedang diproses bagian umum.</div>
+          <div class="bk-timeline-time"><i data-icon="clock"></i>Sedang berjalan</div>
+        </div>
+      </div>
+    </div>
+    <div class="bk-drawer-footer">
+      <button class="bk-btn bk-btn-ghost" data-drawer-close>Tutup</button>
+      <button class="bk-btn bk-btn-primary" data-drawer-close onclick="Bk.toast({type:'success',title:'SK diterbitkan',message:'SK mutasi diterbitkan dan terkirim ke email pegawai.'})"><i data-icon="print"></i>Terbitkan SK</button>
+    </div>
+  </aside>
+</div>
+
+<script src="assets/js/ui-kit.js"></script>
+</body>
+</html>

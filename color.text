@@ -1,0 +1,12 @@
+.KARAWANG-DARK-1-hex { color: #2E594D; }
+.KARAWANG-DARK-2-hex { color: #10733B; }
+.KARAWANG-DARK-3-hex { color: #4AA63C; }
+.KARAWANG-DARK-4-hex { color: #F28E13; }
+.KARAWANG-DARK-5-hex { color: #402727; }
+
+
+.KARAWANG-LIGHT-1-hex { color: #2E594D; }
+.KARAWANG-LIGHT-2-hex { color: #D92938; }
+.KARAWANG-LIGHT-3-hex { color: #4AA63C; }
+.KARAWANG-LIGHT-4-hex { color: #F28E13; }
+.KARAWANG-LIGHT-5-hex { color: #0D0D0D; }

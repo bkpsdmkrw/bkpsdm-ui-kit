@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulir Pegawai — BKPSDM UI Kit</title>
+  <meta name="description" content="Contoh halaman formulir BKPSDM UI Kit dengan wizard multi-langkah.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/ui-kit.css">
+</head>
+<body>
+<div class="bk-app">
+
+  <aside class="bk-sidebar" aria-label="Navigasi utama">
+    <div class="bk-sidebar-header">
+      <div class="bk-brand-mark" aria-hidden="true">BK</div>
+      <div>
+        <div class="bk-brand-name">BKPSDM</div>
+        <div class="bk-brand-sub">UI Kit &middot; Admin Theme</div>
+      </div>
+      <button class="bk-icon-btn bk-ms-auto" data-sidebar-close aria-label="Tutup menu"><i data-icon="x"></i></button>
+    </div>
+    <nav class="bk-sidebar-nav">
+      <div class="bk-nav-group">
+        <div class="bk-nav-group-title">Utama</div>
+        <a class="bk-nav-link" href="index.html"><i data-icon="home"></i>Dashboard</a>
+        <a class="bk-nav-link" href="index.html#analitik"><i data-icon="chart"></i>Analitik<span class="bk-nav-badge bk-soft">12</span></a>
+      </div>
+      <div class="bk-nav-group">
+        <div class="bk-nav-group-title">Contoh Halaman</div>
+        <a class="bk-nav-link is-active" href="form.html"><i data-icon="edit"></i>Formulir</a>
+        <a class="bk-nav-link" href="table.html"><i data-icon="database"></i>Tabel Data</a>
+        <a class="bk-nav-link" href="profile.html"><i data-icon="user"></i>Profil Pengguna</a>
+        <a class="bk-nav-link" href="login.html"><i data-icon="lock"></i>Halaman Login</a>
+        <a class="bk-nav-link" href="404.html"><i data-icon="alert"></i>Halaman 404</a>
+      </div>
+      <div class="bk-nav-group">
+        <div class="bk-nav-group-title">Kepegawaian</div>
+        <a class="bk-nav-link" href="table.html"><i data-icon="users"></i>Data Pegawai<span class="bk-nav-badge">2.8k</span></a>
+        <a class="bk-nav-link" href="profil-asn.html"><i data-icon="id-card"></i>Profil ASN</a>
+        <a class="bk-nav-link" href="mutasi.html"><i data-icon="arrow-swap"></i>Mutasi &amp; Rotasi</a>
+        <a class="bk-nav-link" href="pensiun.html"><i data-icon="log-out"></i>Pensiun</a>
+      </div>
+      <div class="bk-nav-group">
+        <div class="bk-nav-group-title">Sistem</div>
+        <a class="bk-nav-link" href="components.html"><i data-icon="layers"></i>Komponen UI</a>
+        <a class="bk-nav-link" href="#"><i data-icon="settings"></i>Pengaturan</a>
+        <a class="bk-nav-link" href="#"><i data-icon="help"></i>Bantuan</a>
+      </div>
+    </nav>
+    <div class="bk-sidebar-footer">
+      <div class="bk-avatar bk-avatar-blue">AR</div>
+      <div class="bk-flex-col bk-gap-1 bk-sidebar-foot-text" style="min-width:0">
+        <span class="bk-fw-700 bk-fs-sm bk-truncate">Admin BKPSDM</span>
+        <span class="bk-fs-xs bk-muted">Super Administrator</span>
+      </div>
+      <button class="bk-icon-btn bk-ms-auto" data-tooltip="Keluar" data-tooltip-pos="left" aria-label="Keluar"><i data-icon="log-out"></i></button>
+    </div>
+  </aside>
+  <div class="bk-sidebar-backdrop" aria-hidden="true"></div>
+
+  <div class="bk-main">
+    <header class="bk-topbar">
+      <button class="bk-icon-btn" data-sidebar-toggle aria-label="Buka menu"><i data-icon="menu"></i></button>
+      <div>
+        <div class="bk-topbar-title">Formulir Pegawai</div>
+        <nav class="bk-crumb" aria-label="Breadcrumb">
+          <a href="index.html">Beranda</a><i data-icon="chevron-right"></i><a href="table.html">Kepegawaian</a><i data-icon="chevron-right"></i><span>Tambah Pegawai</span>
+        </nav>
+      </div>
+      <div class="bk-topbar-search bk-ms-auto">
+        <i data-icon="search"></i>
+        <input type="search" placeholder="Cari…" aria-label="Pencarian global">
+        <kbd>/</kbd>
+      </div>
+      <div class="bk-dropdown">
+        <button class="bk-icon-btn" data-dropdown-toggle data-tooltip="Pilih tema" aria-label="Pilih tema" aria-haspopup="true"><span data-theme-icon></span></button>
+        <div class="bk-dropdown-menu" style="min-width:200px">
+          <div class="bk-dropdown-header"><div class="bk-dropdown-title">Tampilan</div><div class="bk-dropdown-sub">Pilih tema aplikasi</div></div>
+          <button class="bk-dropdown-item bk-theme-option" data-theme-set="light"><i data-icon="sun"></i>Terang<span class="bk-theme-check"><i data-icon="check"></i></span></button>
+          <button class="bk-dropdown-item bk-theme-option" data-theme-set="dark"><i data-icon="moon"></i>Gelap<span class="bk-theme-check"><i data-icon="check"></i></span></button>
+          <button class="bk-dropdown-item bk-theme-option" data-theme-set="system"><i data-icon="monitor"></i>Ikuti Sistem<span class="bk-theme-check"><i data-icon="check"></i></span></button>
+        </div>
+      </div>
+      <div class="bk-dropdown">
+        <button class="bk-avatar-btn" data-dropdown-toggle aria-haspopup="true">
+          <span class="bk-avatar bk-avatar-blue bk-avatar-sm">AR</span>
+          <i data-icon="chevron-down" style="width:14px;height:14px;color:var(--bk-muted)"></i>
+        </button>
+        <div class="bk-dropdown-menu" style="min-width:200px">
+          <button class="bk-dropdown-item"><i data-icon="user"></i>Profil Saya</button>
+          <button class="bk-dropdown-item"><i data-icon="settings"></i>Pengaturan Akun</button>
+          <div class="bk-dropdown-divider"></div>
+          <button class="bk-dropdown-item is-danger"><i data-icon="log-out"></i>Keluar</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="bk-content">
+      <div class="bk-content-header">
+        <div>
+          <h1>Tambah Pegawai Baru</h1>
+          <p class="bk-sub">Lengkapi data pada setiap tahap. Isian bertanda <span class="bk-code">*</span> wajib diisi.</p>
+        </div>
+        <a class="bk-btn bk-btn-outline" href="table.html"><i data-icon="arrow-right" style="transform:rotate(180deg)"></i>Kembali ke Tabel</a>
+      </div>
+
+      <!-- Wizard steps -->
+      <div class="bk-card bk-mb-6">
+        <div class="bk-card-body">
+          <div class="bk-steps" aria-label="Tahapan pendaftaran">
+            <div class="bk-step is-done">
+              <div class="bk-step-head"><span class="bk-step-num"><i data-icon="check" style="width:14px;height:14px"></i></span><span class="bk-step-line"></span></div>
+              <div class="bk-step-label">Data Pribadi</div>
+            </div>
+            <div class="bk-step is-active">
+              <div class="bk-step-head"><span class="bk-step-num">2</span><span class="bk-step-line"></span></div>
+              <div class="bk-step-label">Informasi Kepegawaian</div>
+            </div>
+            <div class="bk-step">
+              <div class="bk-step-head"><span class="bk-step-num">3</span><span class="bk-step-line"></span></div>
+              <div class="bk-step-label">Kontak &amp; Berkas</div>
+            </div>
+            <div class="bk-step">
+              <div class="bk-step-head"><span class="bk-step-num">4</span></div>
+              <div class="bk-step-label">Verifikasi</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <form data-validate novalidate>
+        <div class="bk-grid">
+          <div class="bk-span-8">
+            <!-- Data pribadi -->
+            <div class="bk-card bk-mb-6">
+              <div class="bk-card-header">
+                <div class="bk-flex bk-gap-3">
+                  <div class="bk-stat-icon bk-stat-icon-primary"><i data-icon="user"></i></div>
+                  <div><div class="bk-card-title">Data Pribadi</div><div class="bk-card-sub">Identitas sesuai dokumen resmi</div></div>
+                </div>
+                <span class="bk-badge bk-badge-soft-success"><i data-icon="check-circle"></i>Lengkap</span>
+              </div>
+              <div class="bk-card-body">
+                <div class="bk-form-grid">
+                  <div class="bk-field">
+                    <label class="bk-label" for="p-nama">Nama Lengkap <span class="bk-req">*</span></label>
+                    <input class="bk-input" id="p-nama" type="text" placeholder="Sesuai ijazah terakhir" required>
+                    <span class="bk-error">Nama lengkap wajib diisi.</span>
+                  </div>
+                  <div class="bk-field">
+                    <label class="bk-label" for="p-nip">NIP <span class="bk-req">*</span></label>
+                    <input class="bk-input bk-mono" id="p-nip" type="text" placeholder="18 digit tanpa spasi" required>
+                    <span class="bk-hint">Format: 198503122009012008</span>
+                    <span class="bk-error">NIP wajib diisi.</span>
+                  </div>
+                  <div class="bk-field">
+                    <label class="bk-label" for="p-tempat">Tempat Lahir <span class="bk-req">*</span></label>
+                    <input class="bk-input" id="p-tempat" type="text" placeholder="cth: Bandung" required>
+                    <span class="bk-error">Wajib diisi.</span>
+                  </div>
+                  <div class="bk-field">
+                    <label class="bk-label" for="p-tgl">Tanggal Lahir <span class="bk-req">*</span></label>
+                    <input class="bk-input" id="p-tgl" type="date" required>
+                    <span class="bk-error">Wajib diisi.</span>
+                  </div>
+                  <div class="bk-field">
+                    <label class="bk-label" for="p-agama">Agama</label>
+                    <select class="bk-select" id="p-agama">
+                      <option>Islam</option><option>Kristen</option><option>Katolik</option>
+                      <option>Hindu</option><option>Buddha</option><option>Konghucu</option>
+                    </select>
+                  </div>
+                  <div class="bk-field">
+                    <label class="bk-label" for="p-status">Status Perkawinan</label>
+                    <select class="bk-select" id="p-status">
+                      <option>Belum Kawin</option><option>Kawin</option>
+                      <option>Cerai Hidup</option><option>Cerai Mati</option>
+                    </select>
+                  </div>
+                  <div class="bk-field bk-span-full">
+                    <span class="bk-label">Jenis Kelamin <span class="bk-req">*</span></span>
+                    <div class="bk-flex bk-gap-4">
+                      <label class="bk-radio"><input type="radio" name="p-jk" required><span class="bk-radio-box"></span>Laki-laki</label>
+                      <label class="bk-radio"><input type="radio" name="p-jk" checked><span class="bk-radio-box"></span>Perempuan</label>
+                    </div>
+                    <span class="bk-error">Pilih jenis kelamin.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Informasi kepegawaian -->
+            <div class="bk-card bk-mb-6">
+              <div class="bk-card-header">
+                <div class="bk-flex bk-gap-3">
+                  <div class="bk-stat-icon bk-stat-icon-info"><i data-icon="briefcase"></i></div>
+                  <div><div class="bk-card-title">Informasi Kepegawaian</div><div class="bk-card-sub">Jabatan, pangkat, dan penempatan</div></div>
+                </div>
+                <span class="bk-badge bk-badge-soft-info">Tahap 2 dari 4</span>
+              </div>
+              <div class="bk-card-body">
+                <div class="bk-form-grid">
+                  <div class="bk-field">
+                    <label class="bk-label" for="k-opd">Instansi / OPD <span class="bk-req">*</span></label>
+                    <select class="bk-select" id="k-opd" required>
+                      <option value="">— Pilih OPD —</option>
+                      <option>Badan Kepegawaian &amp; Pengembangan SDM</option>
+                      <option>Dinas Pendidikan</option>
+                      <option>Dinas Kesehatan</option>
+                      <option>Dinas PUPR</option>
+                    </select>
+                    <span class="bk-error">Pilih OPD.</span>
+                  </div>
+                  <div class="bk-field">
+                    <label class="bk-label" for="k-jabatan">Jabatan <span class="bk-req">*</span></label>
+                    <select class="bk-select" id="k-jabatan" required>
+                      <option value="">— Pilih jabatan —</option>
+                      <option>Analis Kepegawaian</option>
+                      <option>Pranata Komputer</option>
+                      <option>Widyaiswara</option>
+                      <option>Arsiparis</option>
+                    </select>
+                    <span class="bk-error">Pilih jabatan.</span>
+                  </div>
+                  <div class="bk-field">
+                    <label class="bk-label" for="k-pangkat">Pangkat / Golongan</label>
+                    <select class="bk-select" id="k-pangkat">
+                      <option>Penata Muda (III/a)</option>
+                      <option>Penata Muda Tk. I (III/b)</option>
+                      <option>Penata (III/c)</option>
+                      <option>Penata Tk. I (III/d)</option>
+                    </select>
+                  </div>
+                  <div class="bk-field">
+                    <label class="bk-label" for="k-tmt">TMT Jabatan</label>
+                    <input class="bk-input" id="k-tmt" type="date">
+                  </div>
+                  <div class="bk-field">
+                    <label class="bk-label" for="k-eselon">Eselon</label>
+                    <select class="bk-select" id="k-eselon">
+                      <option>—</option><option>II.b</option><option>III.a</option><option>III.b</option><option>IV.a</option>
+                    </select>
+                  </div>
+                  <div class="bk-field">
+                    <label class="bk-label" for="k-unit">Unit Kerja</label>
+                    <input class="bk-input" id="k-unit" type="text" placeholder="cth: Bidang Diklat">
+                  </div>
+                  <div class="bk-field bk-span-full">
+                    <label class="bk-switch"><input type="checkbox" checked><span class="bk-switch-track"></span>Pegawai aktif (terhitung dalam statistik kehadiran)</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Kontak -->
+            <div class="bk-card bk-mb-6">
+              <div class="bk-card-header">
+                <div class="bk-flex bk-gap-3">
+                  <div class="bk-stat-icon bk-stat-icon-cyan"><i data-icon="mail"></i></div>
+                  <div><div class="bk-card-title">Kontak</div><div class="bk-card-sub">Komunikasi resmi kepegawaian</div></div>
+                </div>
+              </div>
+              <div class="bk-card-body">
+                <div class="bk-form-grid">
+                  <div class="bk-field">
+                    <label class="bk-label" for="c-email">Email Resmi <span class="bk-req">*</span></label>
+                    <div class="bk-input-icon"><i data-icon="mail"></i><input class="bk-input" id="c-email" type="email" placeholder="nama@bkpsdm.go.id" required></div>
+                    <span class="bk-error">Email wajib diisi.</span>
+                  </div>
+                  <div class="bk-field">
+                    <label class="bk-label" for="c-telp">No. Telepon</label>
+                    <input class="bk-input" id="c-telp" type="tel" placeholder="08xx-xxxx-xxxx">
+                  </div>
+                  <div class="bk-field bk-span-full">
+                    <label class="bk-label" for="c-alamat">Alamat Domisili</label>
+                    <textarea class="bk-textarea" id="c-alamat" placeholder="Alamat lengkap sesuai KTP"></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Panel samping: berkas -->
+          <div class="bk-span-4">
+            <div class="bk-card bk-mb-6">
+              <div class="bk-card-header">
+                <div class="bk-flex bk-gap-3">
+                  <div class="bk-stat-icon bk-stat-icon-success"><i data-icon="folder"></i></div>
+                  <div><div class="bk-card-title">Berkas Pendukung</div><div class="bk-card-sub">PDF / JPG / PNG, maks. 10 MB</div></div>
+                </div>
+              </div>
+              <div class="bk-card-body bk-flex-col bk-gap-3">
+                <label class="bk-dropzone bk-dropzone-sm" for="b-file">
+                  <input type="file" id="b-file" class="bk-visually-hidden">
+                  <i data-icon="upload"></i>
+                  <div class="bk-dropzone-title">Klik untuk memilih berkas</div>
+                  <div class="bk-dropzone-sub">atau seret &amp; letakkan di sini</div>
+                </label>
+
+                <div class="bk-file-list">
+                  <div class="bk-file-item">
+                    <div class="bk-file-icon bk-file-pdf">PDF</div>
+                    <div class="bk-file-info">
+                      <span class="bk-file-name">sk_pangkat_2026.pdf</span>
+                      <span class="bk-file-meta">2,4 MB &middot; 12 Okt 2026</span>
+                    </div>
+                    <span class="bk-badge bk-badge-soft-success"><i data-icon="check"></i>Tervalidasi</span>
+                    <button class="bk-icon-btn bk-btn-sm" data-tooltip="Hapus berkas" aria-label="Hapus sk_pangkat_2026.pdf" onclick="this.closest('.bk-file-item').remove(); Bk.toast({type:'info',title:'Berkas dihapus',message:'sk_pangkat_2026.pdf dihapus dari daftar.'})"><i data-icon="trash"></i></button>
+                  </div>
+                  <div class="bk-file-item">
+                    <div class="bk-file-icon bk-file-jpg">JPG</div>
+                    <div class="bk-file-info">
+                      <span class="bk-file-name">ijazah_s1.jpg</span>
+                      <span class="bk-file-meta">1,1 MB &middot; 12 Okt 2026</span>
+                    </div>
+                    <span class="bk-badge bk-badge-soft-success"><i data-icon="check"></i>Tervalidasi</span>
+                    <button class="bk-icon-btn bk-btn-sm" data-tooltip="Hapus berkas" aria-label="Hapus ijazah_s1.jpg" onclick="this.closest('.bk-file-item').remove(); Bk.toast({type:'info',title:'Berkas dihapus',message:'ijazah_s1.jpg dihapus dari daftar.'})"><i data-icon="trash"></i></button>
+                  </div>
+                  <div class="bk-file-item">
+                    <div class="bk-file-icon bk-file-doc">DOC</div>
+                    <div class="bk-file-info">
+                      <span class="bk-file-name">surat_pernyataan.docx</span>
+                      <span class="bk-file-meta">86 KB &middot; menunggu</span>
+                    </div>
+                    <span class="bk-badge bk-badge-soft-warning"><span class="bk-badge-dot"></span>Menunggu</span>
+                    <button class="bk-icon-btn bk-btn-sm" data-tooltip="Hapus berkas" aria-label="Hapus surat_pernyataan.docx" onclick="this.closest('.bk-file-item').remove(); Bk.toast({type:'info',title:'Berkas dihapus',message:'surat_pernyataan.docx dihapus dari daftar.'})"><i data-icon="trash"></i></button>
+                  </div>
+                </div>
+
+                <div class="bk-alert bk-alert-warning">
+                  <span class="bk-alert-icon"><i data-icon="alert"></i></span>
+                  <div>
+                    <div class="bk-alert-title">Perlu dilengkapi</div>
+                    <div class="bk-alert-body">Berkas KTP dan SK CPNS belum diunggah.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="bk-card">
+              <div class="bk-card-header"><div class="bk-card-title">Ringkasan</div></div>
+              <div class="bk-card-body bk-flex-col bk-gap-3">
+                <div class="bk-flex bk-between bk-fs-sm"><span class="bk-muted">Tahap</span><span class="bk-fw-700">2 dari 4</span></div>
+                <div class="bk-progress"><div class="bk-progress-bar" style="width:50%"></div></div>
+                <div class="bk-flex bk-between bk-fs-sm"><span class="bk-muted">Kelengkapan data</span><span class="bk-fw-700" style="color:var(--bk-success)">62%</span></div>
+                <div class="bk-progress"><div class="bk-progress-bar bk-success" style="width:62%"></div></div>
+                <hr>
+                <div class="bk-flex bk-gap-3">
+                  <span class="bk-avatar bk-avatar-blue bk-avatar-sm">AR</span>
+                  <div class="bk-flex-col bk-gap-1">
+                    <span class="bk-fs-xs bk-muted">Dibuat oleh</span>
+                    <span class="bk-fw-600 bk-fs-sm">Admin BKPSDM</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Action bar -->
+        <div class="bk-card bk-mb-6">
+          <div class="bk-card-body bk-flex bk-gap-2 bk-between bk-wrap">
+            <span class="bk-fs-xs bk-muted"><i data-icon="info" style="width:13px;height:13px;vertical-align:-2px"></i> Data tersimpan otomatis sebagai draf.</span>
+            <div class="bk-flex bk-gap-2 bk-wrap">
+              <a class="bk-btn bk-btn-ghost" href="table.html">Batal</a>
+              <button type="button" class="bk-btn bk-btn-outline" onclick="Bk.toast({type:'info',title:'Draf tersimpan',message:'Data draf berhasil disimpan.'})"><i data-icon="save"></i>Simpan Draf</button>
+              <button type="submit" class="bk-btn bk-btn-primary"><i data-icon="arrow-right"></i>Simpan &amp; Lanjutkan</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </main>
+
+    <footer class="bk-footer">
+      <span>&copy; 2026 BKPSDM — UI Kit v1.0</span>
+      <span>Halaman contoh: Formulir</span>
+    </footer>
+  </div>
+</div>
+
+<script src="assets/js/ui-kit.js"></script>
+</body>
+</html>

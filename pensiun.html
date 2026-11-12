@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pensiun — BKPSDM UI Kit</title>
+  <meta name="description" content="Contoh halaman manajemen pensiun pegawai BKPSDM UI Kit.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/ui-kit.css">
+</head>
+<body>
+<div class="bk-app">
+
+  <aside class="bk-sidebar" aria-label="Navigasi utama">
+    <div class="bk-sidebar-header">
+      <div class="bk-brand-mark" aria-hidden="true">BK</div>
+      <div>
+        <div class="bk-brand-name">BKPSDM</div>
+        <div class="bk-brand-sub">UI Kit &middot; Admin Theme</div>
+      </div>
+      <button class="bk-icon-btn bk-ms-auto" data-sidebar-close aria-label="Tutup menu"><i data-icon="x"></i></button>
+    </div>
+    <nav class="bk-sidebar-nav">
+      <div class="bk-nav-group">
+        <div class="bk-nav-group-title">Utama</div>
+        <a class="bk-nav-link" href="index.html"><i data-icon="home"></i>Dashboard</a>
+        <a class="bk-nav-link" href="index.html#analitik"><i data-icon="chart"></i>Analitik<span class="bk-nav-badge bk-soft">12</span></a>
+      </div>
+      <div class="bk-nav-group">
+        <div class="bk-nav-group-title">Contoh Halaman</div>
+        <a class="bk-nav-link" href="form.html"><i data-icon="edit"></i>Formulir</a>
+        <a class="bk-nav-link" href="table.html"><i data-icon="database"></i>Tabel Data</a>
+        <a class="bk-nav-link" href="profile.html"><i data-icon="user"></i>Profil Pengguna</a>
+        <a class="bk-nav-link" href="profil-asn.html"><i data-icon="id-card"></i>Profil ASN</a>
+        <a class="bk-nav-link" href="mutasi.html"><i data-icon="arrow-swap"></i>Mutasi &amp; Rotasi</a>
+        <a class="bk-nav-link" href="pensiun.html"><i data-icon="log-out"></i>Pensiun</a>
+        <a class="bk-nav-link" href="login.html"><i data-icon="lock"></i>Halaman Login</a>
+        <a class="bk-nav-link" href="404.html"><i data-icon="alert"></i>Halaman 404</a>
+      </div>
+      <div class="bk-nav-group">
+        <div class="bk-nav-group-title">Kepegawaian</div>
+        <a class="bk-nav-link" href="table.html"><i data-icon="users"></i>Data Pegawai<span class="bk-nav-badge">2.8k</span></a>
+        <a class="bk-nav-link" href="profil-asn.html"><i data-icon="id-card"></i>Profil ASN</a>
+        <a class="bk-nav-link" href="mutasi.html"><i data-icon="arrow-swap"></i>Mutasi &amp; Rotasi</a>
+        <a class="bk-nav-link is-active" href="pensiun.html"><i data-icon="log-out"></i>Pensiun</a>
+      </div>
+      <div class="bk-nav-group">
+        <div class="bk-nav-group-title">Pengembangan</div>
+        <a class="bk-nav-link" href="#"><i data-icon="graduation"></i>Diklat<span class="bk-nav-badge bk-soft">24</span></a>
+        <a class="bk-nav-link" href="#"><i data-icon="award"></i>Sertifikasi</a>
+        <a class="bk-nav-link" href="#"><i data-icon="target"></i>Kompetensi</a>
+        <a class="bk-nav-link" href="#"><i data-icon="monitor"></i>E-Learning</a>
+      </div>
+      <div class="bk-nav-group">
+        <div class="bk-nav-group-title">Sistem</div>
+        <a class="bk-nav-link" href="components.html"><i data-icon="layers"></i>Komponen UI</a>
+        <a class="bk-nav-link" href="#"><i data-icon="settings"></i>Pengaturan</a>
+        <a class="bk-nav-link" href="#"><i data-icon="help"></i>Bantuan</a>
+      </div>
+    </nav>
+    <div class="bk-sidebar-footer">
+      <div class="bk-avatar bk-avatar-blue">AR</div>
+      <div class="bk-flex-col bk-gap-1 bk-sidebar-foot-text" style="min-width:0">
+        <span class="bk-fw-700 bk-fs-sm bk-truncate">Admin BKPSDM</span>
+        <span class="bk-fs-xs bk-muted">Super Administrator</span>
+      </div>
+      <button class="bk-icon-btn bk-ms-auto" data-tooltip="Keluar" data-tooltip-pos="left" aria-label="Keluar"><i data-icon="log-out"></i></button>
+    </div>
+  </aside>
+  <div class="bk-sidebar-backdrop" aria-hidden="true"></div>
+
+  <div class="bk-main">
+    <header class="bk-topbar">
+      <button class="bk-icon-btn" data-sidebar-toggle aria-label="Buka menu"><i data-icon="menu"></i></button>
+      <div>
+        <div class="bk-topbar-title">Pensiun</div>
+        <nav class="bk-crumb" aria-label="Breadcrumb">
+          <a href="index.html">Beranda</a><i data-icon="chevron-right"></i><span>Kepegawaian</span>
+        </nav>
+      </div>
+      <div class="bk-topbar-search bk-ms-auto">
+        <i data-icon="search"></i>
+        <input type="search" placeholder="Cari pegawai…" aria-label="Pencarian global">
+        <kbd>/</kbd>
+      </div>
+      <div class="bk-dropdown">
+        <button class="bk-icon-btn" data-dropdown-toggle data-tooltip="Pilih tema" aria-label="Pilih tema" aria-haspopup="true"><span data-theme-icon></span></button>
+        <div class="bk-dropdown-menu" style="min-width:200px">
+          <div class="bk-dropdown-header"><div class="bk-dropdown-title">Tampilan</div><div class="bk-dropdown-sub">Pilih tema aplikasi</div></div>
+          <button class="bk-dropdown-item bk-theme-option" data-theme-set="light"><i data-icon="sun"></i>Terang<span class="bk-theme-check"><i data-icon="check"></i></span></button>
+          <button class="bk-dropdown-item bk-theme-option" data-theme-set="dark"><i data-icon="moon"></i>Gelap<span class="bk-theme-check"><i data-icon="check"></i></span></button>
+          <button class="bk-dropdown-item bk-theme-option" data-theme-set="system"><i data-icon="monitor"></i>Ikuti Sistem<span class="bk-theme-check"><i data-icon="check"></i></span></button>
+        </div>
+      </div>
+      <div class="bk-dropdown">
+        <button class="bk-avatar-btn" data-dropdown-toggle aria-haspopup="true">
+          <span class="bk-avatar bk-avatar-blue bk-avatar-sm">AR</span>
+          <i data-icon="chevron-down" style="width:14px;height:14px;color:var(--bk-muted)"></i>
+        </button>
+        <div class="bk-dropdown-menu" style="min-width:200px">
+          <button class="bk-dropdown-item"><i data-icon="user"></i>Profil Saya</button>
+          <button class="bk-dropdown-item"><i data-icon="settings"></i>Pengaturan Akun</button>
+          <div class="bk-dropdown-divider"></div>
+          <button class="bk-dropdown-item is-danger"><i data-icon="log-out"></i>Keluar</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="bk-content">
+      <div class="bk-content-header">
+        <div>
+          <h1>Manajemen Pensiun</h1>
+          <p class="bk-sub">Pantau pegawai menjelang Batas Usia Pensiun (BUP) &amp; proses penerbitan SK.</p>
+        </div>
+        <div class="bk-flex bk-gap-2">
+          <button class="bk-btn bk-btn-outline" onclick="Bk.toast({type:'info',title:'Pemeriksaan BUP',message:'Pemeriksaan otomatis BUP dijalankan. 3 pegawai baru terdeteksi.'})"><i data-icon="refresh"></i>Periksa BUP</button>
+          <button class="bk-btn bk-btn-primary" onclick="Bk.toast({type:'success',title:'Pengingat terkirim',message:'Pengingat kelengkapan berkas dikirim ke 12 pegawai.'})"><i data-icon="bell"></i>Kirim Pengingat</button>
+        </div>
+      </div>
+
+      <!-- Stat -->
+      <div class="bk-grid bk-mb-6">
+        <div class="bk-span-3">
+          <div class="bk-card bk-stat"><div class="bk-card-body">
+            <div class="bk-stat-top">
+              <div><div class="bk-stat-label">BUP Tahun 2026</div><div class="bk-stat-value"><span data-counter="87">0</span></div><span class="bk-fs-xs bk-muted">akan diproses</span></div>
+              <div class="bk-stat-icon bk-stat-icon-primary"><i data-icon="calendar"></i></div>
+            </div>
+          </div></div>
+        </div>
+        <div class="bk-span-3">
+          <div class="bk-card bk-stat"><div class="bk-card-body">
+            <div class="bk-stat-top">
+              <div><div class="bk-stat-label">BUP Tahun 2027</div><div class="bk-stat-value"><span data-counter="134">0</span></div><span class="bk-fs-xs bk-muted">persiapan awal</span></div>
+              <div class="bk-stat-icon bk-stat-icon-info"><i data-icon="clock"></i></div>
+            </div>
+          </div></div>
+        </div>
+        <div class="bk-span-3">
+          <div class="bk-card bk-stat"><div class="bk-card-body">
+            <div class="bk-stat-top">
+              <div><div class="bk-stat-label">Pensiun Dini</div><div class="bk-stat-value"><span data-counter="12">0</span></div><span class="bk-fs-xs bk-muted">dalam proses</span></div>
+              <div class="bk-stat-icon bk-stat-icon-warning"><i data-icon="arrow-up-right"></i></div>
+            </div>
+          </div></div>
+        </div>
+        <div class="bk-span-3">
+          <div class="bk-card bk-stat"><div class="bk-card-body">
+            <div class="bk-stat-top">
+              <div><div class="bk-stat-label">Berkas Lengkap</div><div class="bk-stat-value">72<small>%</small></div><span class="bk-fs-xs bk-muted">dari 87 pegawai BUP 2026</span></div>
+              <div class="bk-stat-icon bk-stat-icon-success"><i data-icon="file-text"></i></div>
+            </div>
+          </div></div>
+        </div>
+      </div>
+
+      <!-- Peringatan -->
+      <div class="bk-alert bk-alert-warning bk-mb-6">
+        <span class="bk-alert-icon"><i data-icon="alert"></i></span>
+        <div>
+          <div class="bk-alert-title">SK Pensiun perlu diterbitkan</div>
+          <div class="bk-alert-body">12 pegawai BUP 2026 berkasnya belum lengkap. SK pensiun harus terbit maksimal 1 bulan sebelum TMT.</div>
+        </div>
+        <button class="bk-btn bk-btn-warning bk-btn-sm" onclick="Bk.toast({type:'info',title:'Daftar terbuka',message:'Menampilkan 12 pegawai dengan berkas belum lengkap.'})">Lihat Daftar</button>
+      </div>
+
+      <!-- Tabs -->
+      <div class="bk-card">
+        <div class="bk-card-body">
+          <div class="bk-tabs" data-tabs="pensiun">
+            <button class="bk-tab is-active" data-tab-target="#pen-1">BUP 2026 <span class="bk-badge bk-badge-soft-primary" style="margin-inline-start:6px">87</span></button>
+            <button class="bk-tab" data-tab-target="#pen-2">BUP 2027 <span class="bk-badge" style="margin-inline-start:6px">134</span></button>
+            <button class="bk-tab" data-tab-target="#pen-3">Selesai Diproses</button>
+          </div>
+
+          <div class="bk-tab-panel is-active is-fade" id="pen-1" data-tab-panel>
+            <div class="bk-table-tools">
+              <div class="bk-tools-left">
+                <div class="bk-input-icon" style="width:240px"><i data-icon="search"></i><input class="bk-input" type="search" placeholder="Cari nama / NIP…" aria-label="Cari pegawai"></div>
+                <select class="bk-select" style="width:170px" aria-label="Filter jenis pensiun">
+                  <option>Semua Jenis</option><option>BUP</option><option>Pensiun Dini</option><option>Janda/Duda</option>
+                </select>
+              </div>
+              <div class="bk-tools-right">
+                <button class="bk-btn bk-btn-outline bk-btn-sm" onclick="Bk.toast({type:'success',title:'Rekap diekspor',message:'Daftar BUP 2026 diekspor ke Excel.'})"><i data-icon="download"></i>Ekspor</button>
+              </div>
+            </div>
+            <div class="bk-table-wrap">
+              <table class="bk-table bk-table-hover">
+                <thead>
+                  <tr>
+                    <th class="bk-th-sort" data-dir="asc">Pegawai</th>
+                    <th class="bk-th-sort">TMT Pensiun</th>
+                    <th>Usia</th>
+                    <th>Masa Kerja</th>
+                    <th>Jenis</th>
+                    <th>Kelengkapan Berkas</th>
+                    <th class="bk-text-right">Aksi</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><div class="bk-flex bk-gap-3"><span class="bk-avatar bk-avatar-ink bk-avatar-sm">HS</span><div class="bk-flex-col bk-gap-1"><span class="bk-fw-700">Drs. Hasan Sadikin, M.M.</span><span class="bk-fs-xs bk-muted bk-mono">19651012 199003 1 001</span></div></div></td>
+                    <td data-sort="2026-12-01">01 Des 2026</td><td class="bk-mono">61 th</td><td class="bk-mono">36 th</td>
+                    <td><span class="bk-badge bk-badge-soft-info">BUP</span></td>
+                    <td><div class="bk-flex bk-gap-2" style="min-width:140px"><div class="bk-progress bk-progress-sm" style="flex:1;margin-top:8px"><div class="bk-progress-bar bk-success" style="width:100%"></div></div><span class="bk-fs-xs bk-mono bk-muted">100%</span></div></td>
+                    <td class="bk-text-right">
+                      <div class="bk-flex bk-gap-1" style="justify-content:flex-end">
+                        <button class="bk-btn bk-btn-soft-primary bk-btn-sm" onclick="Bk.toast({type:'info',title:'Detail pensiun',message:'Berkas Hasan Sadikin lengkap, siap terbit SK.'})">Detail</button>
+                        <button class="bk-btn bk-btn-soft-success bk-btn-sm" onclick="Bk.toast({type:'success',title:'SK diterbitkan',message:'SK pensiun Hasan Sadikin diterbitkan.'})"><i data-icon="print"></i>Terbitkan SK</button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><div class="bk-flex bk-gap-3"><span class="bk-avatar bk-avatar-orange bk-avatar-sm">SS</span><div class="bk-flex-col bk-gap-1"><span class="bk-fw-700">Siti Sumarni, S.E.</span><span class="bk-fs-xs bk-muted bk-mono">19680214 199101 2 004</span></div></div></td>
+                    <td data-sort="2026-12-01">01 Des 2026</td><td class="bk-mono">58 th</td><td class="bk-mono">35 th</td>
+                    <td><span class="bk-badge bk-badge-soft-info">BUP</span></td>
+                    <td><div class="bk-flex bk-gap-2" style="min-width:140px"><div class="bk-progress bk-progress-sm" style="flex:1;margin-top:8px"><div class="bk-progress-bar bk-warning" style="width:80%"></div></div><span class="bk-fs-xs bk-mono bk-muted">80%</span></div></td>
+                    <td class="bk-text-right">
+                      <div class="bk-flex bk-gap-1" style="justify-content:flex-end">
+                        <button class="bk-btn bk-btn-soft-primary bk-btn-sm" onclick="Bk.toast({type:'warning',title:'Berkas kurang',message:'SK KGB terakhir belum diunggah.'})">Detail</button>
+                        <button class="bk-btn bk-btn-soft-warning bk-btn-sm" onclick="Bk.toast({type:'info',title:'Pengingat terkirim',message:'Pengingat kelengkapan berkas dikirim ke Siti Sumarni.'})"><i data-icon="bell"></i>Ingatkan</button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><div class="bk-flex bk-gap-3"><span class="bk-avatar bk-avatar-blue bk-avatar-sm">AR</span><div class="bk-flex-col bk-gap-1"><span class="bk-fw-700">Ahmad Ridwan, S.Pd.</span><span class="bk-fs-xs bk-muted bk-mono">19690403 199201 1 007</span></div></div></td>
+                    <td data-sort="2027-02-01">01 Feb 2027</td><td class="bk-mono">57 th</td><td class="bk-mono">34 th</td>
+                    <td><span class="bk-badge bk-badge-soft-warning">Pensiun Dini</span></td>
+                    <td><div class="bk-flex bk-gap-2" style="min-width:140px"><div class="bk-progress bk-progress-sm" style="flex:1;margin-top:8px"><div class="bk-progress-bar" style="width:55%"></div></div><span class="bk-fs-xs bk-mono bk-muted">55%</span></div></td>
+                    <td class="bk-text-right">
+                      <div class="bk-flex bk-gap-1" style="justify-content:flex-end">
+                        <button class="bk-btn bk-btn-soft-primary bk-btn-sm" onclick="Bk.toast({type:'warning',title:'Proses pensiun dini',message:'Menunggu surat permohonan & SK KGB.'})">Detail</button>
+                        <button class="bk-btn bk-btn-soft-warning bk-btn-sm" onclick="Bk.toast({type:'info',title:'Pengingat terkirim',message:'Pengingat kelengkapan berkas dikirim ke Ahmad Ridwan.'})"><i data-icon="bell"></i>Ingatkan</button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="bk-table-foot bk-flex bk-between bk-wrap" style="gap:var(--bk-sp-3)">
+              <span>Menampilkan 1–3 dari 87 pegawai BUP 2026</span>
+              <div class="bk-pagination">
+                <button class="bk-page is-disabled" aria-label="Sebelumnya"><i data-icon="chevron-left"></i></button>
+                <button class="bk-page is-active">1</button>
+                <button class="bk-page">2</button>
+                <button class="bk-page">3</button>
+                <span class="bk-muted bk-fs-xs">…</span>
+                <button class="bk-page">29</button>
+                <button class="bk-page" aria-label="Berikutnya"><i data-icon="chevron-right"></i></button>
+              </div>
+            </div>
+          </div>
+
+          <div class="bk-tab-panel is-fade" id="pen-2" data-tab-panel>
+            <div class="bk-empty">
+              <div class="bk-empty-icon"><i data-icon="calendar"></i></div>
+              <div class="bk-empty-title">BUP 2027 — Persiapan awal</div>
+              <div class="bk-empty-text">134 pegawai akan memasuki BUP tahun 2027. Pemeriksaan berkas dapat dimulai 6 bulan sebelum TMT.</div>
+              <button class="bk-btn bk-btn-primary bk-mt-2" onclick="Bk.toast({type:'info',title:'Daftar dibuka',message:'Menampilkan 134 pegawai BUP 2027.'})"><i data-icon="eye"></i>Lihat Daftar</button>
+            </div>
+          </div>
+
+          <div class="bk-tab-panel is-fade" id="pen-3" data-tab-panel>
+            <div class="bk-empty">
+              <div class="bk-empty-icon"><i data-icon="check-circle"></i></div>
+              <div class="bk-empty-title">Rekap Pensiun 2025</div>
+              <div class="bk-empty-text">143 pegawai telah selesai diproses tahun 2025 — seluruh SK pensiun terbit tepat waktu.</div>
+              <button class="bk-btn bk-btn-outline bk-mt-2" onclick="Bk.toast({type:'success',title:'Rekap diunduh',message:'Rekap pensiun 2025 berhasil diunduh.'})"><i data-icon="download"></i>Unduh Rekap</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="bk-footer">
+      <span>&copy; 2026 BKPSDM — UI Kit v1.0</span>
+      <span>Halaman contoh: Pensiun</span>
+    </footer>
+  </div>
+</div>
+
+<script src="assets/js/ui-kit.js"></script>
+</body>
+</html>

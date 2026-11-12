@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — Halaman Tidak Ditemukan — BKPSDM UI Kit</title>
+  <meta name="description" content="Contoh halaman error 404 BKPSDM UI Kit.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/ui-kit.css">
+</head>
+<body>
+<div class="bk-error-page">
+
+  <div class="bk-auth-theme bk-dropdown">
+    <button class="bk-icon-btn" data-dropdown-toggle data-tooltip="Pilih tema" aria-label="Pilih tema" aria-haspopup="true">
+      <span data-theme-icon></span>
+    </button>
+    <div class="bk-dropdown-menu" style="min-width:200px">
+      <div class="bk-dropdown-header">
+        <div class="bk-dropdown-title">Tampilan</div>
+        <div class="bk-dropdown-sub">Pilih tema aplikasi</div>
+      </div>
+      <button class="bk-dropdown-item bk-theme-option" data-theme-set="light"><i data-icon="sun"></i>Terang<span class="bk-theme-check"><i data-icon="check"></i></span></button>
+      <button class="bk-dropdown-item bk-theme-option" data-theme-set="dark"><i data-icon="moon"></i>Gelap<span class="bk-theme-check"><i data-icon="check"></i></span></button>
+      <button class="bk-dropdown-item bk-theme-option" data-theme-set="system"><i data-icon="monitor"></i>Ikuti Sistem<span class="bk-theme-check"><i data-icon="check"></i></span></button>
+    </div>
+  </div>
+
+  <div class="bk-flex bk-gap-3 bk-mb-6">
+    <div class="bk-brand-mark" aria-hidden="true">BK</div>
+    <div style="text-align:start">
+      <div class="bk-brand-name bk-fs-lg">BKPSDM</div>
+      <div class="bk-brand-sub">Sistem Informasi Kepegawaian &amp; Diklat</div>
+    </div>
+  </div>
+
+  <div class="bk-error-code" aria-hidden="true">404</div>
+  <h1 class="bk-error-title">Halaman tidak ditemukan</h1>
+  <p class="bk-error-text">
+    Halaman yang Anda cari mungkin telah dipindahkan, dihapus, atau alamatnya salah ketik.
+    Periksa kembali URL, atau kembali ke dashboard.
+  </p>
+
+  <div class="bk-flex bk-gap-2 bk-mt-4 bk-wrap" style="justify-content:center">
+    <a class="bk-btn bk-btn-primary bk-btn-lg" href="index.html"><i data-icon="home"></i>Kembali ke Dashboard</a>
+    <button class="bk-btn bk-btn-outline bk-btn-lg" onclick="Bk.toast({type:'info',title:'Bantuan',message:'Tim dukungan akan merespons dalam 1×24 jam kerja.'})"><i data-icon="help"></i>Hubungi Bantuan</button>
+  </div>
+
+  <div class="bk-flex bk-gap-3 bk-mt-6 bk-wrap" style="justify-content:center">
+    <a class="bk-badge bk-badge-soft-info" href="components.html"><i data-icon="layers"></i>Komponen UI</a>
+    <a class="bk-badge bk-badge-soft-primary" href="form.html"><i data-icon="edit"></i>Formulir</a>
+    <a class="bk-badge bk-badge-soft-success" href="table.html"><i data-icon="database"></i>Tabel Data</a>
+    <a class="bk-badge bk-badge-soft-warning" href="profile.html"><i data-icon="user"></i>Profil</a>
+  </div>
+
+  <p class="bk-fs-xs bk-muted bk-mt-8">&copy; 2026 BKPSDM — UI Kit v1.0</p>
+</div>
+
+<script src="assets/js/ui-kit.js"></script>
+</body>
+</html>

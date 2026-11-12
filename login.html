@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Masuk — BKPSDM UI Kit</title>
+  <meta name="description" content="Contoh halaman autentikasi BKPSDM UI Kit.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/ui-kit.css">
+</head>
+<body>
+<div class="bk-auth">
+
+  <!-- Panel brand -->
+  <aside class="bk-auth-aside">
+    <div class="bk-flex bk-gap-3">
+      <div class="bk-brand-mark" aria-hidden="true">BK</div>
+      <div>
+        <div class="bk-brand-name" style="color:#fff">BKPSDM</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.75)">Sistem Informasi Kepegawaian &amp; Diklat</div>
+      </div>
+    </div>
+
+    <div style="position:relative;z-index:1">
+      <h2>Kelola kepegawaian &amp; pengembangan kompetensi dalam satu portal.</h2>
+      <p class="bk-mt-4">Satu pintu untuk data ASN, diklat, sertifikasi, kehadiran, dan laporan kinerja di seluruh OPD.</p>
+      <div class="bk-auth-feature">
+        <div class="bk-stat-icon"><i data-icon="users"></i></div>
+        <div><b>2.847 ASN terdata</b><span>142 OPD tersinkronisasi SIASN</span></div>
+      </div>
+      <div class="bk-auth-feature">
+        <div class="bk-stat-icon"><i data-icon="graduation"></i></div>
+        <div><b>24 program diklat aktif</b><span>1.268 peserta tahun 2026</span></div>
+      </div>
+      <div class="bk-auth-feature">
+        <div class="bk-stat-icon"><i data-icon="shield"></i></div>
+        <div><b>Keamanan terjamin</b><span>SSO pemerintah &amp; 2FA tersedia</span></div>
+      </div>
+    </div>
+
+    <div style="position:relative;z-index:1;font-size:12px;color:rgba(255,255,255,.7)">
+      &copy; 2026 BKPSDM — Badan Kepegawaian &amp; Pengembangan SDM
+    </div>
+  </aside>
+
+  <!-- Panel form -->
+  <main class="bk-auth-main">
+    <div class="bk-auth-theme bk-dropdown">
+      <button class="bk-icon-btn" data-dropdown-toggle data-tooltip="Pilih tema" aria-label="Pilih tema" aria-haspopup="true">
+        <span data-theme-icon></span>
+      </button>
+      <div class="bk-dropdown-menu" style="min-width:200px">
+        <div class="bk-dropdown-header">
+          <div class="bk-dropdown-title">Tampilan</div>
+          <div class="bk-dropdown-sub">Pilih tema aplikasi</div>
+        </div>
+        <button class="bk-dropdown-item bk-theme-option" data-theme-set="light"><i data-icon="sun"></i>Terang<span class="bk-theme-check"><i data-icon="check"></i></span></button>
+        <button class="bk-dropdown-item bk-theme-option" data-theme-set="dark"><i data-icon="moon"></i>Gelap<span class="bk-theme-check"><i data-icon="check"></i></span></button>
+        <button class="bk-dropdown-item bk-theme-option" data-theme-set="system"><i data-icon="monitor"></i>Ikuti Sistem<span class="bk-theme-check"><i data-icon="check"></i></span></button>
+      </div>
+    </div>
+
+    <div class="bk-auth-card">
+      <div class="bk-auth-head">
+        <div class="bk-brand-mark" aria-hidden="true">BK</div>
+        <div>
+          <div class="bk-brand-name bk-fs-lg">BKPSDM Portal</div>
+          <div class="bk-brand-sub">Masuk untuk melanjutkan</div>
+        </div>
+      </div>
+
+      <div class="bk-card">
+        <div class="bk-card-body">
+          <div class="bk-auth-title">Selamat Datang</div>
+          <p class="bk-fs-sm bk-muted bk-mb-6">Masuk dengan akun resmi Anda untuk mengakses dashboard.</p>
+
+          <form data-validate novalidate>
+            <div class="bk-field">
+              <label class="bk-label" for="login-email">Email / NIP <span class="bk-req">*</span></label>
+              <div class="bk-input-icon">
+                <i data-icon="mail"></i>
+                <input class="bk-input bk-input-lg" id="login-email" type="text" placeholder="nama@bkpsdm.go.id" autocomplete="username" required>
+              </div>
+              <span class="bk-error">Email atau NIP wajib diisi.</span>
+            </div>
+
+            <div class="bk-field">
+              <div class="bk-flex bk-between" style="margin-bottom:6px">
+                <label class="bk-label" for="login-pass">Kata Sandi <span class="bk-req">*</span></label>
+                <a href="#" class="bk-fs-xs bk-fw-600" onclick="Bk.toast({type:'info',title:'Lupa sandi',message:'Tautan reset sandi akan dikirim ke email terdaftar.'})">Lupa sandi?</a>
+              </div>
+              <div class="bk-input-icon bk-input-icon-end">
+                <input class="bk-input bk-input-lg" id="login-pass" type="password" placeholder="••••••••" autocomplete="current-password" required>
+                <button data-password-toggle="#login-pass" aria-label="Tampilkan sandi"><i data-icon="eye"></i></button>
+              </div>
+              <span class="bk-error">Kata sandi wajib diisi.</span>
+            </div>
+
+            <label class="bk-check bk-mb-6">
+              <input type="checkbox" checked>
+              <span class="bk-check-box"><i data-icon="check"></i></span>
+              Tetap masuk selama 30 hari
+            </label>
+
+            <button type="submit" class="bk-btn bk-btn-primary bk-btn-lg bk-btn-block">
+              <i data-icon="lock"></i>Masuk ke Portal
+            </button>
+          </form>
+
+          <div class="bk-auth-divider">atau masuk dengan</div>
+
+          <div class="bk-flex bk-gap-2">
+            <button class="bk-btn bk-btn-outline" style="flex:1" onclick="Bk.toast({type:'info',title:'SSO Pemerintah',message:'Diarahkan ke layanan SSO pusat…'})">
+              <i data-icon="shield"></i>SSO Pemerintah
+            </button>
+            <button class="bk-btn bk-btn-outline" style="flex:1" onclick="Bk.toast({type:'info',title:'Akun Google',message:'Login Google hanya untuk akun instansi.'})">
+              <i data-icon="building"></i>Akun Instansi
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <p class="bk-auth-foot">
+        Belum punya akun? <a href="#" onclick="Bk.toast({type:'info',title:'Registrasi',message:'Hubungi admin OPD untuk pembuatan akun.'})">Hubungi Admin OPD</a>
+        &nbsp;&middot;&nbsp; <a href="index.html">Lihat demo dashboard</a>
+      </p>
+    </div>
+  </main>
+</div>
+
+<script src="assets/js/ui-kit.js"></script>
+</body>
+</html>
