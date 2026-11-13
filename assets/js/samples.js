@@ -1205,6 +1205,50 @@ git push origin --tags
 
 # Update berikutnya: npm version X -> npm publish -> git push --tags`,
 
+    'nuxt-wrapper':
+`# 1) Pasang paket inti + wrapper Vue
+npm install @bkpsdm/ui-kit @bkpsdm/ui-kit-vue
+
+# 2) plugins/bk-ui-kit.ts
+import BkUiKit from '@bkpsdm/ui-kit-vue'
+
+export default defineNuxtPlugin((nuxtApp) => {
+  nuxtApp.vueApp.use(BkUiKit)
+})
+
+# 3) nuxt.config.ts — muat CSS inti
+export default defineNuxtConfig({
+  css: ['@bkpsdm/ui-kit/css']
+})
+
+<!-- 4) Pemakaian di template (tanpa tulis kelas manual) -->
+<BkButton type="primary" icon="plus">Simpan</BkButton>
+<BkBadge type="success" dot>Aktif</BkBadge>
+<BkAlert type="success" title="Berhasil" dismissible>Data tersimpan.</BkAlert>
+
+<BkCard title="Profil" subtitle="Data pribadi">
+  <template #actions>
+    <BkButton type="outline" size="sm">Ubah</BkButton>
+  </template>
+  Isi kartu…
+</BkCard>
+
+<BkIcon name="graduation" />
+
+<!-- 36 komponen tersedia:
+     Dasar     : BkButton, BkBadge, BkAlert, BkCard, BkIcon
+     Formulir  : BkField, BkInput, BkTextarea, BkSelect, BkSelectSearch,
+                 BkCheckbox, BkRadio, BkSwitch, BkOtp
+     Display   : BkAvatar, BkChip, BkProgress, BkSpinner, BkSkeleton, BkEmpty,
+                 BkList, BkListItem, BkTimeline, BkTimelineItem
+     Data      : BkStatCard, BkSteps
+     Navigasi  : BkTabs, BkBreadcrumb, BkPagination
+     Overlay   : BkModal, BkDrawer, BkDropdown, BkDropdownItem, BkTooltip,
+                 BkAccordion, BkAccordionItem
+
+     Impor per komponen (tree-shaking):
+     import { BkButton, BkBadge } from '@bkpsdm/ui-kit-vue' -->`,
+
   };
 
   document.addEventListener('DOMContentLoaded', function () {

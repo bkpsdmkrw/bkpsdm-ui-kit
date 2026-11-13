@@ -24,6 +24,7 @@ ui-kit/
 ├── scripts/build.mjs     # Build dist/ untuk npm
 ├── dist/                 # Hasil build npm (CSS, JS, ESM, icons.json)
 ├── src/                  # Service provider Laravel
+├── packages/vue/         # Paket @bkpsdm/ui-kit-vue (komponen Vue 3/Nuxt)
 ├── resources/views/components/  # Komponen Blade starter (<x-bk::...>)
 ├── assets/
 │   ├── css/ui-kit.css    # Design system: tokens + seluruh komponen
@@ -173,6 +174,30 @@ Struktur ekspor paket:
 | `@bkpsdm/ui-kit/script` | `ui-kit.js` (IIFE, `window.Bk`) |
 | `@bkpsdm/ui-kit/icons` | `icons.json` |
 | `@bkpsdm/ui-kit/dashboard` | `dashboard.js` (Chart.js) |
+
+## Wrapper Vue / Nuxt — `@bkpsdm/ui-kit-vue`
+
+Paket terpisah berisi komponen Vue 3 siap pakai (tanpa menulis kelas manual). Tersedia di `packages/vue/`.
+
+```bash
+npm install @bkpsdm/ui-kit @bkpsdm/ui-kit-vue
+```
+
+```ts
+// plugins/bk-ui-kit.ts (Nuxt)
+import BkUiKit from '@bkpsdm/ui-kit-vue'
+export default defineNuxtPlugin((nuxtApp) => nuxtApp.vueApp.use(BkUiKit))
+```
+
+```vue
+<BkButton type="primary" icon="plus">Simpan</BkButton>
+<BkBadge type="success" dot>Aktif</BkBadge>
+<BkAlert type="success" title="Berhasil" dismissible>Data tersimpan.</BkAlert>
+<BkCard title="Profil" subtitle="Data pribadi">Isi kartu…</BkCard>
+<BkIcon name="graduation" />
+```
+
+Komponen (**36**): **Dasar** (BkButton, BkBadge, BkAlert, BkCard, BkIcon) · **Formulir** (BkField, BkInput, BkTextarea, BkSelect, BkSelectSearch, BkCheckbox, BkRadio, BkSwitch, BkOtp) · **Display** (BkAvatar, BkChip, BkProgress, BkSpinner, BkSkeleton, BkEmpty, BkList, BkListItem, BkTimeline, BkTimelineItem) · **Data** (BkStatCard, BkSteps) · **Navigasi** (BkTabs, BkBreadcrumb, BkPagination) · **Overlay** (BkModal, BkDrawer, BkDropdown, BkDropdownItem, BkTooltip, BkAccordion, BkAccordionItem).
 
 ---
 
