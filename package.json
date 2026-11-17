@@ -24,7 +24,8 @@
     "./css": "./dist/ui-kit.css",
     "./icons": "./dist/icons.json",
     "./script": "./dist/ui-kit.js",
-    "./dashboard": "./dist/dashboard.js"
+    "./dashboard": "./dist/dashboard.js",
+    "./charts": "./dist/charts.js"
   },
   "main": "./dist/ui-kit.esm.js",
   "module": "./dist/ui-kit.esm.js",

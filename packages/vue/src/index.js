@@ -34,6 +34,7 @@ import BkTooltip from './components/BkTooltip.js';
 import BkAccordion from './components/BkAccordion.js';
 import BkAccordionItem from './components/BkAccordionItem.js';
 import BkOtp from './components/BkOtp.js';
+import BkChart from './components/BkChart.js';
 
 export { icons, icon } from '@bkpsdm/ui-kit';
 
@@ -74,6 +75,7 @@ const components = {
   BkAccordion,
   BkAccordionItem,
   BkOtp,
+  BkChart,
 };
 
 /**
@@ -81,8 +83,6 @@ const components = {
  *
  *   import BkUiKit from '@bkpsdm/ui-kit-vue'
  *   app.use(BkUiKit)
- *
- * Di Nuxt: plugins/bk-ui-kit.ts → nuxtApp.vueApp.use(BkUiKit)
  */
 const BkUiKit = {
   install(app) {
@@ -129,6 +129,7 @@ export {
   BkAccordion,
   BkAccordionItem,
   BkOtp,
+  BkChart,
 };
 
 export default BkUiKit;

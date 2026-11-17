@@ -49,6 +49,11 @@ const app = createSSRApp({
         default: () => h(Bk.BkAccordionItem, { name: 'a', title: 'Pertanyaan', icon: 'info' }, () => 'Jawaban'),
       }),
       h(Bk.BkOtp, { modelValue: '123' }),
+      h(Bk.BkChart, {
+        type: 'line',
+        data: { labels: ['Jan', 'Feb'], datasets: [{ data: [10, 20] }] },
+        height: 200,
+      }),
     ]),
 });
 
@@ -90,6 +95,7 @@ const checks = [
   ['data-tooltip="Keterangan"', 'BkTooltip'],
   ['bk-accordion-item is-open', 'BkAccordionItem'],
   ['bk-otp-input', 'BkOtp'],
+  ['bk-chart-box', 'BkChart'],
   ['<svg', 'BkIcon SVG'],
 ];
 

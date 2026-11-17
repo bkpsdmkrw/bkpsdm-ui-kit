@@ -14,6 +14,7 @@ mkdirSync(dist, { recursive: true });
 copyFileSync(join(root, 'assets/css/ui-kit.css'), join(dist, 'ui-kit.css'));
 copyFileSync(join(root, 'assets/js/ui-kit.js'), join(dist, 'ui-kit.js'));
 copyFileSync(join(root, 'assets/js/dashboard.js'), join(dist, 'dashboard.js'));
+copyFileSync(join(root, 'assets/js/charts.js'), join(dist, 'charts.js'));
 
 // 2) Ekstrak kamus ikon dari ui-kit.js
 const src = readFileSync(join(root, 'assets/js/ui-kit.js'), 'utf8');
@@ -62,4 +63,5 @@ console.log('  - dist/ui-kit.css');
 console.log('  - dist/ui-kit.js        (IIFE, untuk <script>)');
 console.log('  - dist/ui-kit.esm.js    (ESM)');
 console.log('  - dist/dashboard.js');
+console.log('  - dist/charts.js');
 console.log('  - dist/icons.json       (' + Object.keys(icons).length + ' ikon)');

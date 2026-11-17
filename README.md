@@ -15,7 +15,9 @@ ui-kit/
 ├── profil-asn.html       # Contoh: Profil ASN (6 tab riwayat kepegawaian)
 ├── mutasi.html           # Contoh: Mutasi & rotasi (usulan + alur persetujuan)
 ├── pensiun.html          # Contoh: Manajemen pensiun (BUP + kelengkapan berkas)
-├── login.html            # Contoh: Halaman autentikasi (split-screen)
+├── login.html            # Contoh: Halaman autentikasi (login)
+├── register.html         # Contoh: Registrasi akun
+├── forgot-password.html  # Contoh: Lupa / reset kata sandi
 ├── 404.html              # Contoh: Halaman error
 ├── composer.json         # Paket Composer (siap publikasi ke Packagist)
 ├── package.json          # Paket npm (siap publikasi untuk Nuxt/Vue/React)
@@ -30,6 +32,7 @@ ui-kit/
 │   ├── css/ui-kit.css    # Design system: tokens + seluruh komponen
 │   └── js/
 │       ├── ui-kit.js     # Interaksi inti (ikon, tema, modal, toast, dll.)
+│       ├── charts.js     # Grafik data-attribute (Blade: <x-bk::chart> / @bkChart)
 │       ├── samples.js    # Contoh kode untuk halaman dokumentasi
 │       └── dashboard.js  # Grafik Chart.js 4 (tema-adaptif)
 └── color.text            # Sumber warna brand
@@ -174,6 +177,7 @@ Struktur ekspor paket:
 | `@bkpsdm/ui-kit/script` | `ui-kit.js` (IIFE, `window.Bk`) |
 | `@bkpsdm/ui-kit/icons` | `icons.json` |
 | `@bkpsdm/ui-kit/dashboard` | `dashboard.js` (Chart.js) |
+| `@bkpsdm/ui-kit/charts` | `charts.js` (grafik data-attribute untuk Blade) |
 
 ## Wrapper Vue / Nuxt — `@bkpsdm/ui-kit-vue`
 
@@ -197,7 +201,7 @@ export default defineNuxtPlugin((nuxtApp) => nuxtApp.vueApp.use(BkUiKit))
 <BkIcon name="graduation" />
 ```
 
-Komponen (**36**): **Dasar** (BkButton, BkBadge, BkAlert, BkCard, BkIcon) · **Formulir** (BkField, BkInput, BkTextarea, BkSelect, BkSelectSearch, BkCheckbox, BkRadio, BkSwitch, BkOtp) · **Display** (BkAvatar, BkChip, BkProgress, BkSpinner, BkSkeleton, BkEmpty, BkList, BkListItem, BkTimeline, BkTimelineItem) · **Data** (BkStatCard, BkSteps) · **Navigasi** (BkTabs, BkBreadcrumb, BkPagination) · **Overlay** (BkModal, BkDrawer, BkDropdown, BkDropdownItem, BkTooltip, BkAccordion, BkAccordionItem).
+Komponen (**37**): **Dasar** (BkButton, BkBadge, BkAlert, BkCard, BkIcon) · **Formulir** (BkField, BkInput, BkTextarea, BkSelect, BkSelectSearch, BkCheckbox, BkRadio, BkSwitch, BkOtp) · **Display** (BkAvatar, BkChip, BkProgress, BkSpinner, BkSkeleton, BkEmpty, BkList, BkListItem, BkTimeline, BkTimelineItem) · **Data** (BkStatCard, BkSteps, **BkChart**) · **Navigasi** (BkTabs, BkBreadcrumb, BkPagination) · **Overlay** (BkModal, BkDrawer, BkDropdown, BkDropdownItem, BkTooltip, BkAccordion, BkAccordionItem).
 
 ---
 
@@ -231,6 +235,7 @@ cp -r assets public/
   </div>
   <script src="{{ asset('assets/js/ui-kit.js') }}"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
+  <script src="{{ asset('assets/js/charts.js') }}" defer></script>
   <script src="{{ asset('assets/js/dashboard.js') }}" defer></script>
   @stack('scripts')
 </body>
@@ -401,9 +406,71 @@ Atribut data:
 
 ## Roadmap
 
-- [ ] Halaman autentikasi (login/register/lupa sandi)
-- [ ] Komponen grafik jadi Vue (`BkChart.vue`) & Blade directive
-- [ ] Dark mode per-sesi dari server (Blade)
-- [ ] File ikon terpisah (`icons.json`) agar bisa di-share ke dua stack
+- [x] Halaman autentikasi (login/register/lupa sandi) — `login.html`, `register.html`, `forgot-password.html`
+- [x] Komponen grafik jadi Vue (`BkChart`) & Blade component/directive
+- [x] Dark mode per-sesi dari server (Blade) — `@bkTheme`, `Helpers::themeAttr()`
+- [x] File ikon terpisah (`icons.json`) agar bisa di-share ke dua stack — dipakai ESM, PHP, dan Blade
+
+## Grafik (Vue & Blade)
+
+**Vue / Nuxt** — `BkChart` (Chart.js diimpor dinamis, SSR-safe):
+
+```vue
+<BkChart
+  type="line"
+  :data="{
+    labels: ['Jan','Feb','Mar'],
+    datasets: [{ data: [40, 55, 48], borderColor: '#2E594D', fill: false }]
+  }"
+  :height="280"
+/>
+```
+
+```bash
+npm install chart.js   # peer dependency opsional untuk BkChart
+```
+
+**Blade** — komponen atau directive:
+
+```blade
+<x-bk::chart id="chart-1" type="line" :labels="['Jan','Feb']" :data="[10, 20]" :height="260" />
+
+{{-- atau directive --}}
+@bkChart('chart-2', 'bar', ['Q1','Q2'], [340, 420], 260)
+```
+
+`assets/js/charts.js` membaca `data-chart-*` dan merender pakai Chart.js (muat CDN + `charts.js` di layout).
+
+## Dark Mode per-sesi Server (Blade)
+
+Layout:
+
+```blade
+<html lang="id" @bkTheme>
+```
+
+`@bkTheme` set `data-theme` + `data-theme-pref` dari `session('theme')` / cookie. Simpan pilihan lewat route:
+
+```php
+Route::post('/theme/{mode}', function (string $mode) {
+    abort_unless(in_array($mode, ['light','dark','system']), 404);
+    session(['theme' => $mode]);
+    return back();
+})->name('theme');
+```
+
+`ui-kit.js` memprioritaskan `data-theme-pref` server → localStorage → sistem.
+
+## Ikon bersama (`icons.json`)
+
+Satu sumber ikon (67) untuk semua stack:
+
+| Stack | Pemakaian |
+|---|---|
+| ESM (npm) | `import { icons, icon } from '@bkpsdm/ui-kit'` |
+| PHP / Blade | `\Bkpsdm\UiKit\Helpers::icon('graduation')` · `<x-bk::icon name="graduation" />` · `@bkIcon('graduation')` |
+| JSON mentah | `dist/icons.json` (di-publish ke `public/vendor/bkpsdm/icons.json`) |
+
+Ikon Blade dirender **server-side** (tanpa menunggu JS).
 # bkpsdm-ui-kit
 # bkpsdm-ui-kit

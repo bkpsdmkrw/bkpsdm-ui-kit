@@ -36,6 +36,13 @@ export interface BkTooltipProps { text: string; position?: 'top' | 'bottom' | 'l
 export interface BkAccordionProps { modelValue?: Array<string | number>; single?: boolean; }
 export interface BkAccordionItemProps { name: string | number; title?: string | null; icon?: string | null; }
 export interface BkOtpProps { modelValue?: string; length?: number; }
+export interface BkChartProps {
+  type?: string;
+  data: Record<string, any>;
+  options?: Record<string, any> | null;
+  height?: number | string;
+  ariaLabel?: string;
+}
 
 export declare const BkIcon: DefineComponent<BkIconProps>;
 export declare const BkButton: DefineComponent<BkButtonProps>;
@@ -73,6 +80,7 @@ export declare const BkTooltip: DefineComponent<BkTooltipProps>;
 export declare const BkAccordion: DefineComponent<BkAccordionProps>;
 export declare const BkAccordionItem: DefineComponent<BkAccordionItemProps>;
 export declare const BkOtp: DefineComponent<BkOtpProps>;
+export declare const BkChart: DefineComponent<BkChartProps>;
 
 export declare const icons: Record<string, string>;
 export declare function icon(name: string, className?: string): string;

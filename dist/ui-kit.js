@@ -97,6 +97,9 @@
   var systemQuery = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
 
   function getThemePref() {
+    // Prioritas: preferensi dari server (Blade session/cookie) -> localStorage -> sistem
+    var attr = document.documentElement.getAttribute('data-theme-pref');
+    if (attr === 'light' || attr === 'dark' || attr === 'system') return attr;
     var stored = null;
     try { stored = localStorage.getItem(THEME_KEY); } catch (e) { /* private mode */ }
     return (stored === 'light' || stored === 'dark' || stored === 'system') ? stored : 'system';

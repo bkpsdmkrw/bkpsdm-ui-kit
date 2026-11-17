@@ -2,14 +2,14 @@
 
 Komponen **Vue 3 / Nuxt** untuk [BKPSDM UI Kit](https://www.npmjs.com/package/@bkpsdm/ui-kit) — tanpa menulis kelas CSS manual. Selaras **INA Digital Design System**.
 
-## Daftar komponen (36)
+## Daftar komponen (37)
 
 | Kategori | Komponen |
 |---|---|
 | **Dasar** | `BkButton` · `BkBadge` · `BkAlert` · `BkCard` · `BkIcon` |
 | **Formulir** | `BkField` · `BkInput` · `BkTextarea` · `BkSelect` · `BkSelectSearch` · `BkCheckbox` · `BkRadio` · `BkSwitch` · `BkOtp` |
 | **Display** | `BkAvatar` · `BkChip` · `BkProgress` · `BkSpinner` · `BkSkeleton` · `BkEmpty` · `BkList` · `BkListItem` · `BkTimeline` · `BkTimelineItem` |
-| **Data** | `BkStatCard` · `BkSteps` |
+| **Data** | `BkStatCard` · `BkSteps` · `BkChart` |
 | **Navigasi** | `BkTabs` · `BkBreadcrumb` · `BkPagination` |
 | **Overlay** | `BkModal` · `BkDrawer` · `BkDropdown` · `BkDropdownItem` · `BkTooltip` · `BkAccordion` · `BkAccordionItem` |
 
@@ -40,6 +40,9 @@ Props utama:
 
 ```bash
 npm install @bkpsdm/ui-kit @bkpsdm/ui-kit-vue
+
+# opsional — hanya jika memakai <BkChart>
+npm install chart.js
 ```
 
 Wajib memuat CSS inti (sekali di aplikasi):

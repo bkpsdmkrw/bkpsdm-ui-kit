@@ -1,6 +1,6 @@
 {
   "name": "@bkpsdm/ui-kit-vue",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "Komponen Vue 3 / Nuxt untuk BKPSDM UI Kit — BkButton, BkBadge, BkAlert, BkCard, BkIcon. Selaras INA Digital Design System.",
   "type": "module",
   "license": "MIT",
@@ -33,7 +33,13 @@
     "@bkpsdm/ui-kit": "^1.0.0"
   },
   "peerDependencies": {
-    "vue": "^3.3.0"
+    "vue": "^3.3.0",
+    "chart.js": ">=4.0.0"
+  },
+  "peerDependenciesMeta": {
+    "chart.js": {
+      "optional": true
+    }
   },
   "scripts": {
     "test:ssr": "node scripts/test-ssr.mjs"

@@ -944,6 +944,7 @@ cp -r assets public/
   </div>
   <script src="{{ asset('assets/js/ui-kit.js') }}"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
+  <script src="{{ asset('assets/js/charts.js') }}" defer></script>
   <script src="{{ asset('assets/js/dashboard.js') }}" defer></script>
   @stack('scripts')
 </body>
